@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Comprehension Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: #1e1e2e;
+            color: white;
+        }
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            background: #282a36;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            padding: 10px;
+        }
+        .btn {
+            background: #ff5555;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 18px;
+            display: block;
+        }
+        .btn:hover {
+            background: #ff79c6;
+        }
+
+        .result-screen {
+    display: none;
+    background: #44475a;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  #resultScore {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+
+  .result-screen p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f8f8f2;
+  }
+
+  #timer {
+    font-size: 28px;         /* حجم أكبر */
+    color: yellow;           /* اللون أصفر */
+    font-weight: bold;       /* خط عريض */
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 10px auto;
+  }
+
+      
+      .author {
+  font-size: 24px;        /* تكبير الخط */
+  color: #ffd700;         /* لون ذهبي مميز */
+  text-align: center;
+  font-weight: bold;      /* جعله عريض */
+  margin-bottom: 15px;
+  position: relative;     /* إزالة الوضع المطلق حتى يظهر في مكانه الطبيعي */
+  top: auto;
+}
+
+
+
+
+label {
+  font-size: 22px; /* حجم نص الاختيار */
+  padding: 10px;
+  display: block;
+}
+
+input[type="radio"] {
+  transform: scale(1.5); /* تكبير حجم الدائرة */
+  margin-right: 10px;
+}
+
+
+  #passage {
+    font-size: 16px;     /* حجم الخط */
+    font-weight: bold;   /* خط عريض */
+  }
+
+
+#startScreen p {
+  font-size: 22px;
+  font-weight: bold;
+}
+#startScreen input {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px;
+}
+
+  
+
+#startScreen h1 {
+  font-size: 40px; /* حجم الخط */
+  font-weight: bold; /* عريض */
+  color: #ffd700; /* لون مميز مثل الذهبي (اختياري) */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container" id="startScreen">
+        <h1>📘 𝒯𝒽𝑒 𝐵𝓇𝒾𝓉𝒾𝓈𝒽 𝐼𝓃𝓉𝑒𝓇𝓃𝒶𝓉𝒾𝑜𝓃𝒶𝓁 𝐿𝑒𝒶𝓇𝓃𝒾𝓃𝑔 𝒞𝑒𝓃𝓉𝑒𝓇 (𝐼𝐿𝐶)
+
+</h1>
+        <h2></h2>
+<p>Course Name: <input type="text" id="courseName" value="Placement Test" readonly style="background-color: #f0f0f0; border: none;"></p>
+        <p>Enter Your Name: <input type="text" id="traineeName"></p>
+        <p>Enter Your Phone Number: <input type="text" id="traineePhone"></p>
+        <p>Enter Password: <input type="password" id="password"></p>
+        <button class="btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div class="container" id="quizContainer" style="display: none;">
+        <h2 id="quizTitle">Placement Test</h2>
+        <p class="author">📘 𝒯𝒽𝑒 𝐵𝓇𝒾𝓉𝒾𝓈𝒽 𝐼𝓃𝓉𝑒𝓇𝓃𝒶𝓉𝒾𝑜𝓃𝒶𝓁 𝐿𝑒𝒶𝓇𝓃𝒾𝓃𝑔 𝒞𝑒𝓃𝓉𝑒𝓇 (𝐼𝐿𝐶)</p>
+        <p>Date: <span id="date"></span></p>
+        <p id="timer">Time Remaining: 60:00</p>
+        <div id="passage">
+  <h3>Read the following passage carefully and answer the following questions:</h3>
+  <p style="font-size: 22px;">
+    
+                        </div>
+        <div id="quiz"></div>
+    </div>
+    
+    <div class="result-screen" id="resultScreen" style="display: none;">
+        <h2>Test Result</h2>
+        <p class="author">Created by: Ahmed Amer</p>
+        <p><strong>Course Name:</strong> <span id="resultCourse"></span></p>
+        <p><strong>Name:</strong> <span id="resultName"></span></p>
+        <p><strong>Phone Number:</strong> <span id="resultPhone"></span></p>
+        <p><strong>Test Date:</strong> <span id="resultDate"></span></p>
+        <p><strong>Start Time:</strong> <span id="resultStartTime"></span></p>
+        <p><strong>Time Taken:</strong> <span id="resultTime"></span></p>
+        <p><strong>Score:</strong> <span id="resultScore"></span></p>
+    </div>
+
+
+ 
+
+ 
+
+  </div>
+<div style="
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #ffd700;
+">
+  ✏️ 
+
+  
+</div>
+
+
+<script>
+    // عند الضغط على أي مكان في الصفحة، أدخل وضع ملء الشاشة
+    document.addEventListener("click", () => {
+      const elem = document.documentElement; // أو document.getElementById("myForm")
+      if (document.fullscreenElement) return; // لا تفعل شيء إذا كنا بالفعل في ملء الشاشة
+
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    });
+  </script>
+
+    
+    <script>
+        document.getElementById("date").innerText = new Date().toLocaleDateString("en-US");
+    
+    const trueFalseQuestions = [
+  {
+    passage: `Passage 1:<br>What are you doing today?<br><strong>BETTY CHAN:</strong> I usually stay home on Sundays and take it easy - read, clean the house, do stuff like that. But today I'm at the mall. I'm buying some things for my kids.`,
+    q: "Betty's --------------------- today.",
+    a: "a",
+    options: ["Shopping", "Reading", "Cleaning", "Resting"]
+  },
+  {
+    passage: `Passage 2:<br>What do you do?<br><strong>TONY PEREX:</strong> I'm a flight attendant with a major airline. Flying isn't dangerous, but it can be stressful. When I'm up in the air working, I always have something to do. I like it because I meet a lot of interesting people.`,
+    q: "Tony's job is -------------------.",
+    a: "a",
+    options: ["Busy", "Easy", "Relaxing", "Boring"]
+  },
+  {
+    passage: `Passage 3:<br><strong>A vacation postcard</strong><br>Dear Sal,<br>Greetings from France – it's so good to be back here again. We left the kids with their grandparents in Chicago, and we're biking across the French countryside by ourselves. We brought a tent and sleeping bags, so we can camp out if we want to, but we're really enjoying the small hotels we find along the way.<br>Love, Michael and Paula.`,
+    q: "Michael and Paula ----------------.",
+    a: "a",
+    options: [
+      "Have been to France before",
+      "Took their children with them",
+      "Are visiting their grandparents",
+      "Prefer to sleep outside"
+    ]
+  },
+  {
+    passage: `Passage 4:<br><strong>The "Zone"</strong><br>You're deeply involved in a task and can ignore everything around you – ringing telephones, your neighbor's TV, even your own hunger – and still do things in record time. This is similar to what athletes call the "Zone" – the power to concentrate so hard that you can ignore everything else. This ability can bring success in any field, but in athletics it can mean all the difference between winning and losing a game or event.`,
+    q: `In this reading, the "Zone" refers to a person's ----------------.`,
+    a: "a",
+    options: ["State of mind", "Neighborhood", "Physical condition", "Intelligence"]
+  },
+  {
+    passage: `Passage 4:<br><strong>The "Zone"</strong><br>You're deeply involved in a task and can ignore everything around you – ringing telephones, your neighbor's TV, even your own hunger – and still do things in record time. This is similar to what athletes call the "Zone" – the power to concentrate so hard that you can ignore everything else. This ability can bring success in any field, but in athletics it can mean all the difference between winning and losing a game or event.`,
+    q: `Athletes in the "Zone" are more likely to ----------------.`,
+    a: "c",
+    options: ["Fall", "Compete", "Win", "Relax"]
+  },
+  {
+    passage: `Passage 5:<br><strong>Henry Ford and the Model-T</strong><br>Henry Ford became famous and rich because he found a better, faster way to build cars. This is shown in the history of the Model-T. When the Model-T was first introduced in 1908, it took 14 hours to build and cost $850. After Ford introduced into his own factory the mass-production techniques that he saw in a meat-packing plant, the time for building a Model-T was reduced to less than two hours. As a result, Ford was able to drop the price of the car to $265. By 1927, he had sold over 15 million Model-Ts.`,
+    q: `The first Model–T was expensive because it ----------------.`,
+    a: "c",
+    options: [
+      "Was new",
+      "Was very popular",
+      "Took a long time to build",
+      "Was built in a factory"
+    ]
+  },
+  {
+    passage: `Passage 5:<br><strong>Henry Ford and the Model-T</strong><br>Henry Ford became famous and rich because he found a better, faster way to build cars. This is shown in the history of the Model-T. When the Model-T was first introduced in 1908, it took 14 hours to build and cost $850. After Ford introduced into his own factory the mass-production techniques that he saw in a meat-packing plant, the time for building a Model-T was reduced to less than two hours. As a result, Ford was able to drop the price of the car to $265. By 1927, he had sold over 15 million Model-Ts.`,
+    q: `The Model–T became so popular because it was -------- than other cars.`,
+    a: "d",
+    options: ["Newer", "Faster", "Better", "Cheaper"]
+  },
+
+  {
+    passage: `Passage 6:<br><strong>It's a Big Country!</strong><br>When it comes to body weight, Americans stand out. Most visitors to the United States, no matter where they go across this vast country, comment on the size of many Americans. In fact, these impressions are backed by numerous statistics. For example, the average 5'4" American weighs 162 pounds, or 15 pounds more than the average person of the same height from Western or Central Europe. Another comparison: At 150 pounds, the average 5'4" American woman is 24 pounds heavier than her Japanese counterpart.<br><br>Why are Americans so heavy? Some blame the American diet. Certainly it's true that Americans eat more high–fat foods – meat, dairy products, and processed food – and fewer grains and vegetables than people in other countries. But fat isn't the whole story. Lifestyle factors – including the tendency for Americans to drive rather than walk or ride a bicycle to work, to snack throughout the day, and to have so many labor-saving devices in the home – appear to contribute to the problem.`,
+    q: "According to the article, visitors to the United States often comment on the size of the ---",
+    a: "d",
+    options: ["Population", "Cities", "Country", "People"]
+  },
+  {
+    passage: `Passage 6:<br><strong>It's a Big Country!</strong><br>When it comes to body weight, Americans stand out. ... (same passage as above)`,
+    q: "According to the article, the average Western European weighs --------.",
+    a: "c",
+    options: [
+      "More than an American",
+      "More than a Central European",
+      "Less than an American",
+      "Less than a Japanese person"
+    ]
+  },
+  {
+    passage: `Passage 6:<br><strong>It's a Big Country!</strong><br>When it comes to body weight, Americans stand out. ... (same passage as above)`,
+    q: "In comparison with Americans, people in other countries eat more ----.",
+    a: "d",
+    options: ["Meat", "Dairy products", "Processed food", "Grains"]
+  },
+  {
+    passage: `Passage 6:<br><strong>It's a Big Country!</strong><br>When it comes to body weight, Americans stand out. ... (same passage as above)`,
+    q: "The article implies that Americans would lose weight if they --------.",
+    a: "b",
+    options: [
+      "Snacked more often",
+      "Rode bicycles to work",
+      "Stayed at home more",
+      "Ate fewer vegetables"
+    ]
+  },
+    {
+    passage: `Passage 7:<br><strong>Small talk isn't so "small"</strong><br>Small talk may not be about serious issues; nevertheless, researchers into the subject have concluded that it's important. That's because small talk keeps us connected to one another and can lead to bigger things, such as a job or a new friendship. Yet people who find themselves alone with another person often don't know what to say. Here are a few tips to help you start a conversation, and to keep the conversational bell rolling.<br><br>Start with the obvious. If you have something in common with another person (your job, hobbies, a person you both know, etc), begin with that. If you don't know the person, it's always acceptable to bring up a neutral topic such as the weather or a recent news event. It isn't necessary to be clever – all that's required is to show interest in the other person and to be willing to talk.<br><br>Compliment where appropriate. If the other person has done something you like or is wearing something attractive, it's always appropriate to compliment. But avoid talking about the specifics of a person's physical appearance (people can't usually change how they look) and keep your compliments short and to the point ("What a great tie!" or "You look great tonight!") and continue with another topic.<br><br>Talk about yourself – then return to your partner. It's perfectly ok to talk about your own interests for a while, but keep your conversation from becoming a monolog. It's only polite, for example, that after talking about your own children, you turn the conversation back to your partner by asking about his or her children.`,
+    q: "According to the article, the main function of small talk is to ---------.",
+    a: "c",
+    options: [
+      "Show our own importance",
+      "Get valuable information",
+      "Relate to other people",
+      "Talk about major issues"
+    ]
+  },
+  {
+    passage: `Passage 7:<br><strong>Small talk isn't so "small"</strong><br>...(same passage as above)...`,
+    q: `"Start with the obvious" means that you should talk about things that you --------.`,
+    a: "a",
+    options: [
+      "Have in common",
+      "Enjoy doing",
+      "Want to understand",
+      "Know everything about"
+    ]
+  },
+  {
+    passage: `Passage 7:<br><strong>Small talk isn't so "small"</strong><br>...(same passage as above)...`,
+    q: "You need to be careful when complimenting someone because most people --------.",
+    a: "b",
+    options: [
+      "Don't like compliments",
+      "Can't change how they look",
+      "Don't dress very well",
+      "Haven't done anything interesting"
+    ]
+  },
+  {
+  passage: `Passage 7:<br><strong>Small talk isn't so "small"</strong><br>
+Small talk may not be about serious issues; nevertheless, researchers into the subject have concluded that it's important. That's because small talk keeps us connected to one another and can lead to bigger things, such as a job or a new friendship. Yet people who find themselves alone with another person often don't know what to say. Here are a few tips to help you start a conversation, and to keep the conversational bell rolling.<br><br>
+Start with the obvious. If you have something in common with another person (your job, hobbies, a person you both know, etc), begin with that. If you don't know the person, it's always acceptable to bring up a neutral topic such as the weather or a recent news event. It isn't necessary to be clever – all that's required is to show interest in the other person and to be willing to talk.<br><br>
+Compliment where appropriate. If the other person has done something you like or is wearing something attractive, it's always appropriate to compliment. But avoid talking about the specifics of a person's physical appearance (people can't usually change how they look) and keep your compliments short and to the point ("What a great tie!" or "You look great tonight!") and continue with another topic.<br><br>
+Talk about yourself – then return to your partner. It's perfectly ok to talk about your own interests for a while, but keep your conversation from becoming a monolog. It's only polite, for example, that after talking about your own children, you turn the conversation back to your partner by asking about his or her children.`,
+  q: "You should avoid monologs because other people ---------------.",
+  a: "c",
+  options: [
+    "Have no interest in what you say.",
+    "Already know a lot about you.",
+    "Like to talk about themselves, too.",
+    "Prefer to discuss neutral subjects."
+  ]
+},
+{
+  passage: `Passage 8:<br><strong>Headaches</strong><br>
+Everyone has experienced headaches, but only recently have medical researchers begun to learn more specifically about the causes and possible treatments for different types of headache pain.<br><br>
+The most common type of headache is the simple tension headache. Tension headaches are usually mild and short-lasting and can result from various factors, such as stress caused by worry or noise. Tension headaches are caused by a tightening of the neck or back muscles, which slow the flow of blood and, therefore, oxygen to the brain. It is the lack of oxygen that causes the pain. Most headaches can be relieved by taking a mild analgesic such as aspirin. Analgesics expand the blood vessels and restore the normal flow of blood and oxygen to the brain.<br><br>
+A more serious type of headache is the migraine. Migraine headaches are often extremely painful and can last for hours or days. Like tension headaches, they can be the result of different factors, including stress, hormonal changes, and allergies. Unlike tension headaches, however, they are caused by an abnormal expansion or swelling (rather than a contraction) of the blood vessels within the head. Medicines that shrink swollen blood vessels can be used to treat migraine headaches.<br><br>
+A tiny minority of headaches can be linked to severe physical problems such as head injury or brain tumors. For these types of headaches, there are medicines to treat the symptoms, but there is no cure unless the underlying problem is removed.`,
+  q: "The main thesis of the article is -----------.",
+  a: "c",
+  options: [
+    "Tiny minority of people who have headaches",
+    "History of medical research into headaches",
+    "Causes and remedies for headaches",
+    "Physical problems caused by headaches"
+  ]
+},
+{
+  passage: `Passage 8:<br><strong>Headaches</strong><br>
+  Everyone has experienced headaches, but only recently have medical researchers begun to learn more specifically about the causes and possible treatments for different types of headache pain.<br>
+  The most common type of headache is the simple tension headache. Tension headaches are usually mild and short-lasting and can result from various factors, such as stress caused by worry or noise. Tension headaches are caused by a tightening of the neck or back muscles, which slow the flow of blood and, therefore, oxygen to the brain. It is the lack of oxygen that causes the pain. Most headaches can be relieved by taking a mild analgesic such as aspirin. Analgesics expand the blood vessels and restore the normal flow of blood and oxygen to the brain.<br>
+  A more serious type of headache is the migraine. Migraine headaches are often extremely painful and can last for hours or days. Like tension headaches, they can be the result of different factors, including stress, hormonal changes, and allergies. Unlike tension headaches, however, they are caused by an abnormal expansion or swelling (rather than a contraction) of the blood vessels within the head. Medicines that shrink swollen blood vessels can be used to treat migraine headaches.<br>
+  A tiny minority of headaches can be linked to severe physical problems such as head injury or brain tumors. For these types of headaches, there are medicines to treat the symptoms, but there is no cure unless the underlying problem is removed.`,
+  q: " A tension headache can result when-----------------.",
+  a: "c",
+  options: [
+    "The neck and back muscles relax",
+    "People get injured in an accident",
+    "The flow of blood is restricted",
+    "Too much oxygen goes to the brain"
+  ]
+},
+{
+  passage: "", // إعادة استخدام نفس الباساج السابق لذا نتركه فارغًا أو تكراره لو تحب
+  q: " Migraine headaches--------------.",
+  a: "c",
+  options: [
+    "Are the most common kind of headache?",
+    "Usually last only a few minutes",
+    "Can cause extreme pain",
+    "Have one main cause"
+  ]
+},
+{
+    passage: `Passage 8:<br><strong>Headaches</strong><br>Everyone has experienced headaches...`,
+    q: " Medicines for migraines ------------.",
+    a: "d",
+    options: [
+      "Relax the head and neck.",
+      "Generally relieve tension",
+      "Increase the flow of blood",
+      "Cause blood vessels to contract"
+    ]
+  },
+  {
+    passage: `Passage 8:<br><strong>Headaches</strong><br>Everyone has experienced headaches...`,
+    q: " Headaches caused by serious physical problems.",
+    a: "d",
+    options: [
+      "Can't be treated",
+      "Don't cause much pain",
+      "Have no symptoms",
+      "Are not very common"
+    ]
+  }
+
+];
+
+    
+const questions = [
+  {
+    q: "---------- several good restaurants in our neighborhood.",
+    a: "c",
+    options: ["There", "They're", "There are", "Their"]
+  },
+  {
+    q: "The gas station is ------- Main Street.",
+    a: "a",
+    options: ["On", "At", "Next", "Close"]
+  },
+  {
+    q: "I can't swim very well. I can't ----.",
+    a: "b",
+    options: ["Too", "Either", "So", "Neither"]
+  },
+  {
+    q: "I enjoy ---------------- out two or three times a week.",
+    a: "b",
+    options: ["To eat", "Eating", "Eat", "I eat"]
+  },
+  {
+    q: "These days, -------------- women keep working after they get married.",
+    a: "a",
+    options: ["Most", "Most of", "Almost", "The most"]
+  },
+  {
+    q: "My new job is very --------------.",
+    a: "c",
+    options: ["Excitement", "Excited", "Exciting", "Excite"]
+  },
+  {
+    q: "After finishing college, I hope ---------- married.",
+    a: "d",
+    options: ["Get", "That get", "Getting", "To get"]
+  },
+  {
+    q: "Mt. Everest is ---- mountain in the world.",
+    a: "d",
+    options: ["The high", "High as", "Laughter than", "The highest"]
+  },
+  {
+    q: "Bob's never been bungee jumping, ---------------- he?",
+    a: "b",
+    options: ["Is", "Has", "Does", "Was"]
+  },
+  {
+    q: "I've run out of money. I wish I ------------ more.",
+    a: "c",
+    options: ["Am saving", "Have saved", "Had saved", "Will save"]
+  },
+  {
+    q: "Could you tell me where ---------------?",
+    a: "b",
+    options: ["Is the post office", "The post office is", "Is it the post office?", "It is the post office"]
+  },
+  {
+    q: "If I had known about the accident, I ----------- it to the police.",
+    a: "b",
+    options: ["Reported", "Would have reported", "Was reporting", "Have been reporting"]
+  },
+  {
+    q: "Yolanda --------------- part time for several years now.",
+    a: "a",
+    options: ["Has been working", "Is working", "Works", "Was working"]
+  },
+  {
+    q: "The Taj Mahal is really worth ------------.",
+    a: "b",
+    options: ["To see it", "Seeing", "You see it", "See"]
+  },
+  {
+    q: "If I went to live in a foreign country, ------------ my friends.",
+    a: "a",
+    options: ["I'd miss", "I'm missing", "I missed", "I miss"]
+  },
+  {
+    q: "Would you mind -------- the window?",
+    a: "b",
+    options: ["Open", "Opening", "To open", "I open"]
+  },
+  {
+    q: "I was interested ---------- the violin.",
+    a: "c",
+    options: ["To study", "Study", "In studying", "Studied"]
+  },
+  {
+    q: "Before a film is finished, it needs --------------.",
+    a: "c",
+    options: ["They edit it", "To edit", "To be edited", "Being edited"]
+  },
+  {
+    q: "By 2040, scientists -------- a cure for cancer.",
+    a: "b",
+    options: ["Had found", "Will have found", "Are finding", "Have been finding"]
+  },
+  {
+    q: "She must ------- about our appointment.",
+    a: "d",
+    options: ["Forget", "Be forgetting", "Forgot", "Have forgotten"]
+  },
+  {
+    q: "We're not used ----------- our own meals.",
+    a: "d",
+    options: ["Cook", "To cook", "Cooking", "To cooking"]
+  },
+  {
+    q: "Chicago, ---------- is nicknamed the Windy City, is the largest city in Illinois.",
+    a: "b",
+    options: ["It", "Which", "What", "That"]
+  },
+  {
+    q: "------------------ John, I like to cook.",
+    a: "d",
+    options: ["Unless", "Except", "Instead", "Unlike"]
+  },
+  {
+    q: "Before -------------- breakfast, I usually take a shower.",
+    a: "c",
+    options: ["Eat", "To eat", "Eating", "That eat"]
+  },
+  {
+    q: "I'm taking a class -------------- learn more about my computer.",
+    a: "c",
+    options: ["So that", "In order", "In order to", "That"]
+  },
+  {
+    q: "For me, mathematics is ----------- difficult than biology.",
+    a: "a",
+    options: ["More", "The more", "Most", "The most"]
+  },
+  {
+    q: "I would rather ---------------- evening classes.",
+    a: "b",
+    options: ["Don't take", "Not take", "No taking", "Not taking"]
+  },
+  {
+    q: "I feel sick. I shouldn't -------------- too much.",
+    a: "c",
+    options: ["To eat", "Eaten", "Have eaten", "Eating"]
+  },
+  {
+    q: "Jim's boss demanded that he ------ to work earlier.",
+    a: "d",
+    options: ["Has come", "Coming", "Is come", "Come"]
+  },
+  {
+    q: "The earlier children learn to read, ---------- for their education.",
+    a: "c",
+    options: ["Good", "The good", "The better", "The best"]
+  }
+];
+
+
+
+    
+        let currentTFQuestion = 0;
+        let tfCorrectAnswers = 0;
+        let currentQuestion = 0;
+        let correctAnswers = 0;
+        let timeLeft = 3600;
+        let timerInterval;
+        let startTime;
+    
+        function startQuiz() {
+    let name = document.getElementById("traineeName").value.trim();
+    let phone = document.getElementById("traineePhone").value.trim();
+    let password = document.getElementById("password").value;
+    let course = document.getElementById("courseName").value.trim(); // 🆕 قراءة اسم الكورس
+    let quizTitle = document.getElementById("quizTitle"); // 🆕 العنوان اللي هيتغير
+
+    if (!name) {
+        alert("❗ برجاء إدخال الاسم.");
+        return;
+    }
+
+    if (!phone) {
+        alert("❗ برجاء إدخال رقم التليفون.");
+        return;
+    }
+
+    if (password !== "1550") {
+        alert("❌ كلمة المرور غير صحيحة! الرجاء المحاولة مرة أخرى.");
+        return;
+    }
+
+    // 🆕 تغيير العنوان بناءً على اسم الكورس
+    quizTitle.textContent = course || "Placement Test";
+
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("quizContainer").style.display = "block";
+    startTime = new Date();
+    startTimer();
+    loadTFQuestion();
+
+    // تشغيل وضع ملء الشاشة
+    let elem = document.documentElement;
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+    }
+}
+
+
+
+    
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                let minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                document.getElementById("timer").innerText = `Time Remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    showResult();
+                }
+                timeLeft--;
+            }, 1000);
+        }
+    
+      function loadTFQuestion() {
+    let quizDiv = document.getElementById("quiz");
+    let passageDiv = document.getElementById("passage");
+
+    if (currentTFQuestion < trueFalseQuestions.length) {
+        let q = trueFalseQuestions[currentTFQuestion];
+
+        // عرض المقطع
+        passageDiv.innerHTML = `
+            <h3>Read the following passage carefully and answer the question:</h3>
+            <p style="font-size: 22px;">${q.passage}</p>
+        `;
+
+        // عرض السؤال والاختيارات
+        let questionHTML = `<p class='question'><strong>${currentTFQuestion + 1}- ${q.q}</strong></p>`;
+
+        q.options.forEach((option, index) => {
+    const letter = String.fromCharCode(97 + index); // "a", "b", ...
+    questionHTML += `
+        <label>
+            <input type='radio' name='answer' value='${letter}'>
+            ${option}
+        </label><br>
+    `;
+});
+
+        questionHTML += `<button class='btn' onclick='nextTFQuestion()'>Next</button>`;
+        quizDiv.innerHTML = questionHTML;
+    } else {
+        // الانتهاء من عرض كل الأسئلة
+        document.getElementById("passage").style.display = "none";
+        quizDiv.innerHTML = "<p>You've finished all reading questions.</p>";
+        loadQuestion(); // لو فيه مرحلة تانية
+    }
+}
+
+    
+  function nextTFQuestion() {
+  const selectedAnswer = document.querySelector("input[name='answer']:checked");
+  if (!selectedAnswer) {
+    alert("Please select an answer");
+    return;
+  }
+
+  const q = trueFalseQuestions[currentTFQuestion];
+  const selectedValue = selectedAnswer.value;
+
+  const isAnswerKeyALetter = q.a.length === 1 && ["a", "b", "c", "d"].includes(q.a.toLowerCase());
+
+  if (isAnswerKeyALetter) {
+    if (selectedValue === q.a.toLowerCase()) {
+      tfCorrectAnswers++; // ✅ صحح هنا بدل score
+    }
+  } else {
+    const selectedOptionIndex = selectedValue.charCodeAt(0) - 97;
+    const selectedOptionText = q.options[selectedOptionIndex];
+
+    if (selectedOptionText.trim().toLowerCase() === q.a.trim().toLowerCase()) {
+      tfCorrectAnswers++; // ✅ صحح هنا بدل score
+    }
+  }
+
+  currentTFQuestion++;
+  loadTFQuestion();
+}
+
+
+
+
+        function loadQuestion() {
+            let quizDiv = document.getElementById("quiz");
+            let q = questions[currentQuestion];
+            quizDiv.innerHTML = `<p class='question'>${q.q}</p>` +
+                q.options.map((option, index) => `<label><input type='radio' name='answer' value='${String.fromCharCode(97 + index)}'> ${option}</label>`).join('') +
+                `<button class='btn' onclick='nextQuestion()'>${currentQuestion === questions.length - 1 ? "Finish" : "Next"}</button>`;
+        }
+    
+        function nextQuestion() {
+            let selectedAnswer = document.querySelector("input[name='answer']:checked");
+            if (!selectedAnswer) return;
+            if (selectedAnswer.value === questions[currentQuestion].a) {
+                correctAnswers++;
+            }
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+    
+let serverUrl = ""; // سيتم تحديثه تلقائيًا عند تحميل الصفحة
+
+// دالة لجلب رابط السيرفر المخزن في GitHub
+function fetchServerUrl() {
+fetch("https://raw.githubusercontent.com/etiqotwf/liveServer1/main/serverUrl.json")
+        .then(response => response.json())
+        .then(data => {
+            if (data.serverUrl) {
+                serverUrl = data.serverUrl;
+                console.log("✅ رابط السيرفر المحدث من GitHub:", serverUrl);
+            } else {
+                console.error("❌ لم يتم العثور على رابط السيرفر في المستودع.");
+                retryFetchServerUrl();
+            }
+        })
+        .catch(error => {
+            console.error("❌ خطأ في جلب رابط السيرفر من GitHub:", error);
+            retryFetchServerUrl();
+        });
+}
+
+// دالة لإعادة المحاولة عند الفشل
+function retryFetchServerUrl() {
+    if (retryCount < MAX_RETRIES) {
+        retryCount++;
+        console.log(`🔄 إعادة المحاولة (${retryCount}/${MAX_RETRIES}) بعد 3 ثوانٍ...`);
+        setTimeout(fetchServerUrl, 3000);
+    } else {
+        console.error("⛔ تم الوصول إلى الحد الأقصى من المحاولات، تعذر جلب رابط السيرفر.");
+    }
+}
+
+// تحميل رابط السيرفر عند فتح الصفحة
+fetchServerUrl();
+
+function showResult() {
+    clearInterval(timerInterval);
+
+    let endTime = new Date();
+    let timeTaken = Math.floor((endTime - startTime) / 1000);
+    let minutesTaken = Math.floor(timeTaken / 60);
+    let secondsTaken = timeTaken % 60;
+
+    let name = document.getElementById("traineeName").value || "Unknown";
+    let phone = document.getElementById("traineePhone").value || "Unknown";
+    let date = new Date().toLocaleDateString("en-US");
+    let course = document.getElementById("courseName").value || "Unknown";
+
+    let totalQuestions = trueFalseQuestions.length + questions.length;
+    let totalCorrectAnswers = tfCorrectAnswers + correctAnswers;
+
+    let resultData = {
+        name: name,
+        phone: phone,
+        date: date,
+        course: course,
+        startTime: startTime.toLocaleString("en-GB", {
+            timeZone: "Africa/Cairo",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            hour12: true
+        }),
+        timeTaken: `${minutesTaken} min ${secondsTaken} sec`,
+        score: `${totalCorrectAnswers} / ${totalQuestions}`
+    };
+
+    // إرسال البيانات إلى السيرفر إذا تم تحميل الرابط
+    if (!serverUrl) {
+        console.log("⏳ انتظار تحميل رابط السيرفر...");
+        fetchServerUrl().then(() => {
+            if (serverUrl) {
+                sendDataToServer(resultData);
+            } else {
+                console.error("❌ لم يتم تحميل رابط السيرفر بعد.");
+                alert("⚠️ تعذر إرسال البيانات! تأكد من اتصال الإنترنت وأعد المحاولة.");
+            }
+        });
+    } else {
+        sendDataToServer(resultData);
+    }
+
+    // إرسال البيانات إلى Google Sheets
+    sendDataToGoogleSheet(resultData);
+
+    // تحديث واجهة المستخدم
+    document.getElementById("resultCourse").innerText = course;
+    document.getElementById("resultName").innerText = name;
+    document.getElementById("resultPhone").innerText = phone;
+    document.getElementById("resultDate").innerText = date;
+    document.getElementById("resultStartTime").innerText = startTime.toLocaleTimeString();
+    document.getElementById("resultTime").innerText = `${minutesTaken} min ${secondsTaken} sec`;
+    document.getElementById("resultScore").innerText = `${totalCorrectAnswers} / ${totalQuestions}`;
+
+    document.getElementById("quizContainer").style.display = "none";
+    document.getElementById("resultScreen").style.display = "block";
+}
+
+// إرسال البيانات إلى السيرفر الأساسي
+function sendDataToServer(resultData) {
+    fetch(`${serverUrl}/submit`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(resultData)
+    })
+    .then(response => response.json())
+    .then(data => console.log("✅ تم الإرسال إلى السيرفر بنجاح:", data))
+    .catch(error => console.error("❌ خطأ أثناء الإرسال إلى السيرفر:", error));
+}
+
+
+
+
+
+function sendDataToGoogleSheet(resultData) {
+    const formData = new URLSearchParams();
+    formData.append("course", resultData.course);
+    formData.append("name", resultData.name);
+    formData.append("phone", resultData.phone);
+    formData.append("date", resultData.date);
+    formData.append("startTime", resultData.startTime);
+    formData.append("timeTaken", resultData.timeTaken);
+    formData.append("score", resultData.score);
+    formData.append("course", resultData.course);
+
+
+    fetch("https://script.google.com/macros/s/AKfycbybhyNx3uPAoAjGlvHe_jumSp_NKeOIIwoAPHWOqzUukmlmtoTlE5wF8Y_w17l5m9FS/exec", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
+    })
+    .then(response => response.text())
+    .then(responseText => {
+        console.log("✅ تم الإرسال إلى Google Sheet:", responseText);
+    })
+    .catch(error => {
+        console.error("❌ خطأ في الإرسال إلى Google Sheet:", error);
+    });
+}
+
+
+
+
+    </script>
+    </body>
+</html>
