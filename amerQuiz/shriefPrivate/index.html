@@ -156,7 +156,7 @@ input[type="radio"] {
 
 </h1>
         <h2></h2>
-<p>Course Name: <input type="text" id="courseName" value="ICDL TEST" readonly style="background-color: #f0f0f0; border: none;"></p>
+<p>Course Name: <input type="text" id="courseName" value="ShreifPrivate Course" readonly style="background-color: #f0f0f0; border: none;"></p>
         <p>Enter Your Name: <input type="text" id="traineeName"></p>
         <p>Enter Your Phone Number: <input type="text" id="traineePhone"></p>
         <p>Enter Password: <input type="password" id="password"></p>
@@ -236,73 +236,118 @@ input[type="radio"] {
   "passage": `<div style="margin-top: 120px;">
   <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
     
-    <strong style="font-size: 24px; color: #0056b3;">💻 Introduction: Understanding <span style="color:#0078d7;">ICDL Course</span></strong><br><br>
+    <strong style="font-size: 24px; color: #0056b3;">💻 Practicing <span style="color:#0078d7;">Excel Advanced Functions with Examples</span></strong><br><br>
     
     <em><u style="color:#0056b3;">Why this is important:</u></em><br>
-    The ICDL course builds essential computer skills that help learners use technology effectively in both work and daily life. It covers everything from the basics of computers to professional use of software and IT security. 🎯<br><br>
+    Hands-on training with real numbers helps learners apply formulas in Excel and see results instantly. 🎯<br><br>
 
-    <strong style="font-size: 20px; color:#004080;">📘 Core ICDL Modules:</strong><br><br>
+    <strong style="font-size: 20px; color:#004080;">📘 Functions with Practical Examples:</strong><br><br>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
       
       <!-- Card 1 -->
       <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. Computer Essentials</h3>
-        <p>➡️ Covers the fundamentals of using a computer: operating systems, file management, working with folders, storage devices, and basic troubleshooting. It ensures learners are confident in managing computer tasks effectively 💻.</p>
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. VLOOKUP</h3>
+        <p>➡️ Search for an employee’s department.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>ID</th><th>Name</th><th>Department</th></tr>
+          <tr><td>101</td><td>Ali</td><td>HR</td></tr>
+          <tr><td>102</td><td>Sara</td><td>IT</td></tr>
+        </table>
+        <p><b>Formula:</b> =VLOOKUP(102, A2:C3, 3, FALSE)<br>
+        <b>Result:</b> IT ✅</p>
       </div>
 
       <!-- Card 2 -->
       <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. IT Security</h3>
-        <p>➡️ Focuses on protecting data and devices from digital threats. Topics include creating strong passwords, using antivirus software, safe internet practices, email security, and understanding encryption 🔐.</p>
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. INDEX + MATCH</h3>
+        <p>➡️ Find salary of Kareem.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Name</th><th>Salary</th></tr>
+          <tr><td>Kareem</td><td>5000</td></tr>
+          <tr><td>Mona</td><td>6000</td></tr>
+        </table>
+        <p><b>Formula:</b> =INDEX(B2:B3, MATCH("Kareem", A2:A3, 0))<br>
+        <b>Result:</b> 5000 ✅</p>
       </div>
 
       <!-- Card 3 -->
       <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. Word Processing</h3>
-        <p>➡️ Teaches how to create, format, and edit professional documents using Microsoft Word. Includes working with text, tables, styles, references, and page layouts to prepare official reports and letters 📝.</p>
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. IF + Nested IF</h3>
+        <p>➡️ Grade student based on score.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:50%; text-align:center;">
+          <tr><th>Score</th></tr>
+          <tr><td>72</td></tr>
+        </table>
+        <p><b>Formula:</b> =IF(B2>=90,"Excellent",IF(B2>=50,"Pass","Fail"))<br>
+        <b>Result:</b> Pass ✅</p>
       </div>
 
       <!-- Card 4 -->
       <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. Spreadsheets</h3>
-        <p>➡️ Focuses on Microsoft Excel for managing data, formulas, and functions. Learners will build tables, create charts, and apply formulas to perform calculations and analyze information 📊.</p>
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. SUMIFS</h3>
+        <p>➡️ Total sales in 2024.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Type</th><th>Year</th><th>Amount</th></tr>
+          <tr><td>Sales</td><td>2024</td><td>3000</td></tr>
+          <tr><td>Sales</td><td>2023</td><td>2000</td></tr>
+          <tr><td>Sales</td><td>2024</td><td>2500</td></tr>
+        </table>
+        <p><b>Formula:</b> =SUMIFS(C2:C4, A2:A4,"Sales", B2:B4,2024)<br>
+        <b>Result:</b> 5500 ✅</p>
       </div>
 
       <!-- Card 5 -->
       <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. Presentations</h3>
-        <p>➡️ Introduces Microsoft PowerPoint for designing impactful presentations. Covers slide design, use of images, animations, transitions, and presenting techniques for academic or professional settings 🎤.</p>
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. TEXT & DATE</h3>
+        <p>➡️ Show today’s date in custom format.</p>
+        <p><b>Formula:</b> =TEXT(TODAY(),"DD-MMM-YYYY")<br>
+        <b>Result:</b> 31-Aug-2025 ✅</p>
       </div>
 
       <!-- Card 6 -->
       <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">6. Databases</h3>
-        <p>➡️ Explains the basics of databases using Microsoft Access. Learners will understand tables, queries, forms, and reports to manage and organize large amounts of information efficiently 📚.</p>
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">6. PMT (Financial)</h3>
+        <p>➡️ Loan monthly payment.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Loan</th><th>Rate</th><th>Years</th></tr>
+          <tr><td>50000</td><td>5%</td><td>5</td></tr>
+        </table>
+        <p><b>Formula:</b> =PMT(5%/12, 60, -50000)<br>
+        <b>Result:</b> -943.56 (monthly) ✅</p>
       </div>
 
       <!-- Card 7 -->
       <div style="background:#fff; border-left:6px solid #800080; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#800080; font-size:20px; margin-bottom:8px;">7. Online Collaboration</h3>
-        <p>➡️ Focuses on working with cloud tools and collaboration platforms. Topics include sharing documents, real-time editing, video conferencing, and teamwork tools to enhance productivity 🌍.</p>
+        <h3 style="color:#800080; font-size:20px; margin-bottom:8px;">7. Power Query</h3>
+        <p>➡️ Import and clean sales data.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Name</th><th>Sales</th></tr>
+          <tr><td>Ali</td><td>2000</td></tr>
+          <tr><td>Ali</td><td>2000</td></tr>
+          <tr><td>Sara</td><td>3000</td></tr>
+        </table>
+        <p><b>Action:</b> Use Data → Get & Transform → Remove Duplicates<br>
+        <b>Result:</b> Clean list without duplicates ✅</p>
       </div>
 
     </div>
   </div>
 </div><br>
 
-<b style="font-size: 17px; color:#cc0000;">Course Goal:</b> 
-<span style="color:#333;">To empower learners with essential digital skills that improve employability, productivity, and safety in the digital world ✅.</span>`,
+<b style="font-size: 17px; color:#cc0000;">Tip:</b> 
+<span style="color:#333;">Use the tables above directly in Excel to practice the formulas step by step ✅.</span>`,
 
-  "q": "Which ICDL module teaches how to protect data and devices from cyber threats?",
-  "a": "b",
+  "q": "If you want to calculate total sales for 2024 only, which Excel function should you use?",
+  "a": "d",
   "options": [
-    "Computer Essentials",
-    "IT Security",
-    "Databases",
-    "Word Processing"
+    "VLOOKUP",
+    "INDEX+MATCH",
+    "PMT",
+    "SUMIFS"
   ]
 },
+
 
 
 
