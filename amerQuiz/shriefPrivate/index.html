@@ -231,6 +231,808 @@ input[type="radio"] {
     const trueFalseQuestions = [
 
 
+    {
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+
+    <strong style="font-size: 24px; color: #0056b3;">💻 Practicing <span style="color:#0078d7;">Excel Advanced Functions with Examples</span></strong><br><br>
+
+    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
+    Hands-on training with real numbers helps learners apply formulas in Excel and see results instantly. 🎯<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">📘 Functions with Practical Examples:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+
+      <!-- Card 1: SIGN -->
+      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. SIGN</h3>
+        <p>➡️ Determine the sign of a number.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:40%; text-align:center;">
+          <tr><th>Number</th></tr>
+          <tr><td>-45</td></tr>
+        </table>
+        <p><b>Formula:</b> =SIGN(A2)<br>
+        <b>Result:</b> -1 ✅</p>
+      </div>
+
+      <!-- Card 2: LEFT & RIGHT -->
+      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. LEFT & RIGHT</h3>
+        <p>➡️ Extract characters from text.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:50%; text-align:center;">
+          <tr><th>Text</th></tr>
+          <tr><td>Excel2025</td></tr>
+        </table>
+        <p><b>Formula (LEFT):</b> =LEFT(A2,5) → Excel<br>
+        <b>Formula (RIGHT):</b> =RIGHT(A2,4) → 2025 ✅</p>
+      </div>
+
+      <!-- Card 3: CHOOSE -->
+      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. CHOOSE</h3>
+        <p>➡️ Select a value from a list by index number.</p>
+        <p><b>Formula:</b> =CHOOSE(2, "Red","Green","Blue")<br>
+        <b>Result:</b> Green ✅</p>
+      </div>
+
+      <!-- Card 4: CONVERT -->
+      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. CONVERT</h3>
+        <p>➡️ Convert values from one unit to another.</p>
+        <p><b>Formula:</b> =CONVERT(100,"km","mi")<br>
+        <b>Result:</b> 62.1371 ✅</p>
+      </div>
+
+      <!-- Card 5: PV -->
+      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. PV (Present Value)</h3>
+        <p>➡️ Calculate present value of investment.</p>
+        <p><b>Formula:</b> =PV(5%/12,60,-500)<br>
+        <b>Result:</b> -25,978.56 ✅</p>
+      </div>
+
+      <!-- Card 6: WORKDAY -->
+      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">6. WORKDAY</h3>
+        <p>➡️ Find the end date after working days.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
+          <tr><th>Start Date</th><th>Days</th></tr>
+          <tr><td>01-Sep-2025</td><td>10</td></tr>
+        </table>
+        <p><b>Formula:</b> =WORKDAY(A2,B2)<br>
+        <b>Result:</b> 15-Sep-2025 ✅</p>
+      </div>
+
+      <!-- Card 7: NETWORKDAYS -->
+      <div style="background:#fff; border-left:6px solid #800080; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#800080; font-size:20px; margin-bottom:8px;">7. NETWORKDAYS</h3>
+        <p>➡️ Calculate number of working days between two dates.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Start</th><th>End</th></tr>
+          <tr><td>01-Sep-2025</td><td>15-Sep-2025</td></tr>
+        </table>
+        <p><b>Formula:</b> =NETWORKDAYS(A2,B2)<br>
+        <b>Result:</b> 11 ✅</p>
+      </div>
+
+      <!-- Card 8: COMBINE (TEXTJOIN) -->
+      <div style="background:#fff; border-left:6px solid #0099cc; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#0099cc; font-size:20px; margin-bottom:8px;">8. COMBINE (TEXTJOIN)</h3>
+        <p>➡️ Combine text values with a delimiter.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
+          <tr><th>Name</th></tr>
+          <tr><td>Ali</td></tr>
+          <tr><td>Sara</td></tr>
+          <tr><td>Kareem</td></tr>
+        </table>
+        <p><b>Formula:</b> =TEXTJOIN(", ", TRUE, A2:A4)<br>
+        <b>Result:</b> Ali, Sara, Kareem ✅</p>
+      </div>
+
+      <!-- Card 9: OFFSET -->
+      <div style="background:#fff; border-left:6px solid #ff6600; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ff6600; font-size:20px; margin-bottom:8px;">9. OFFSET</h3>
+        <p>➡️ Return value from a cell range with an offset.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Month</th><th>Sales</th></tr>
+          <tr><td>Jan</td><td>200</td></tr>
+          <tr><td>Feb</td><td>300</td></tr>
+          <tr><td>Mar</td><td>400</td></tr>
+        </table>
+        <p><b>Formula:</b> =OFFSET(B2,2,0)<br>
+        <b>Result:</b> 400 ✅</p>
+      </div>
+
+      <!-- Card 10: SUMIFS -->
+      <div style="background:#fff; border-left:6px solid #ff0000; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ff0000; font-size:20px; margin-bottom:8px;">10. SUMIFS</h3>
+        <p>➡️ Total sales in 2025 only.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Type</th><th>Year</th><th>Amount</th></tr>
+          <tr><td>Sales</td><td>2025</td><td>3000</td></tr>
+          <tr><td>Sales</td><td>2024</td><td>2000</td></tr>
+          <tr><td>Sales</td><td>2025</td><td>2500</td></tr>
+        </table>
+        <p><b>Formula:</b> =SUMIFS(C2:C4,A2:A4,"Sales",B2:B4,2025)<br>
+        <b>Result:</b> 5500 ✅</p>
+      </div>
+
+      <!-- Card 11: AGGREGATE -->
+      <div style="background:#fff; border-left:6px solid #663399; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#663399; font-size:20px; margin-bottom:8px;">11. AGGREGATE</h3>
+        <p>➡️ Perform calculations ignoring hidden rows/errors.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Value</th></tr>
+          <tr><td>10</td></tr>
+          <tr><td>20</td></tr>
+          <tr><td>#DIV/0!</td></tr>
+        </table>
+        <p><b>Formula:</b> =AGGREGATE(9,6,A2:A4)<br>
+        <b>Result:</b> 30 ✅</p>
+      </div>
+
+      <!-- Card 12: Recording Macro -->
+      <div style="background:#fff; border-left:6px solid #009933; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#009933; font-size:20px; margin-bottom:8px;">12. Recording Macro</h3>
+        <p>➡️ Automate repetitive tasks.</p>
+        <p><b>Action:</b> Go to Developer → Record Macro → Perform actions → Stop Recording<br>
+        <b>Result:</b> Macro is saved for reuse ✅</p>
+      </div>
+
+      <!-- Card 13: Developer Tools Insert Controls -->
+      <div style="background:#fff; border-left:6px solid #cc0066; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#cc0066; font-size:20px; margin-bottom:8px;">13. Developer Tools Insert Controls</h3>
+        <p>➡️ Add interactive buttons, checkboxes, or dropdowns.</p>
+        <p><b>Action:</b> Developer Tab → Insert → Choose Control → Place in sheet<br>
+        <b>Result:</b> Interactive form element added ✅</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Tip:</b>
+<span style="color:#333;">Use the tables above directly in Excel to practice the formulas step by step ✅.</span>`,
+
+  "q": "If you want to calculate number of working days between two dates, which Excel function should you use?",
+  "a": "c",
+  "options": [
+    "OFFSET",
+    "WORKDAY",
+    "NETWORKDAYS",
+    "AGGREGATE"
+  ]
+},
+
+
+
+    {
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fdfdfd; color: #333; padding: 25px; border: 2px solid #eee; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    
+    <strong style="font-size: 24px; color: #1a237e;">💻 Powerful <span style="color:#0288d1;">Excel Advanced Functions</span> with Real Examples</strong><br><br>
+    
+    <em><u style="color:#01579b;">Why this matters:</u></em><br>
+    These functions allow you to calculate, filter, and manage reports with conditions and smart logic. 🚀<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">📘 Practical Examples with Real Datasets:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #c2185b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#c2185b; font-size:20px; margin-bottom:8px;">1. SUMIF</h3>
+        <p>➡️ Sum sales greater than 3000.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
+          <tr><th>Sales</th></tr>
+          <tr><td>2500</td></tr>
+          <tr><td>4000</td></tr>
+          <tr><td>5000</td></tr>
+        </table>
+        <p><b>Formula:</b> =SUMIF(A2:A4, ">3000")<br>
+        <b>Result:</b> 9000 ✅</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #388e3c; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#388e3c; font-size:20px; margin-bottom:8px;">2. COUNTIF</h3>
+        <p>➡️ Count students scoring above 70.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Scores</th></tr>
+          <tr><td>65</td></tr>
+          <tr><td>72</td></tr>
+          <tr><td>85</td></tr>
+        </table>
+        <p><b>Formula:</b> =COUNTIF(A2:A4, ">70")<br>
+        <b>Result:</b> 2 ✅</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #1976d2; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#1976d2; font-size:20px; margin-bottom:8px;">3. NOW</h3>
+        <p>➡️ Display the current date & time.</p>
+        <p><b>Formula:</b> =NOW()<br>
+        <b>Result:</b> 03/09/2025 13:45 ✅ (auto-updates)</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #f57c00; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#f57c00; font-size:20px; margin-bottom:8px;">4. IF + AND</h3>
+        <p>➡️ Check if a student passed both Math & English.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Math</th><th>English</th></tr>
+          <tr><td>80</td><td>75</td></tr>
+        </table>
+        <p><b>Formula:</b> =IF(AND(A2>=70,B2>=70),"Pass","Fail")<br>
+        <b>Result:</b> Pass ✅</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #512da8; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#512da8; font-size:20px; margin-bottom:8px;">5. IF + OR</h3>
+        <p>➡️ Pass if Math OR English ≥ 70.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Math</th><th>English</th></tr>
+          <tr><td>65</td><td>72</td></tr>
+        </table>
+        <p><b>Formula:</b> =IF(OR(A2>=70,B2>=70),"Pass","Fail")<br>
+        <b>Result:</b> Pass ✅</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #00796b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#00796b; font-size:20px; margin-bottom:8px;">6. INDEX</h3>
+        <p>➡️ Return 2nd product from a list.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:90%; text-align:center;">
+          <tr><th>Products</th></tr>
+          <tr><td>Laptop</td></tr>
+          <tr><td>Tablet</td></tr>
+          <tr><td>Phone</td></tr>
+        </table>
+        <p><b>Formula:</b> =INDEX(A2:A4,2)<br>
+        <b>Result:</b> Tablet ✅</p>
+      </div>
+
+      <!-- Card 7 -->
+      <div style="background:#fff; border-left:6px solid #d32f2f; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#d32f2f; font-size:20px; margin-bottom:8px;">7. Conditional Formatting</h3>
+        <p>➡️ Highlight values greater than 80.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Scores</th></tr>
+          <tr><td style="background:#ffccbc;">65</td></tr>
+          <tr><td style="background:#c8e6c9;">85</td></tr>
+          <tr><td style="background:#c8e6c9;">92</td></tr>
+        </table>
+        <p><b>Rule:</b> Apply format if value > 80 ✅</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#d84315;">Tip:</b> 
+<span style="color:#333;">These functions are your best tools to make reports dynamic, logical, and visually clear 📊✅.</span>`,
+
+  "q": "Which Excel function would you use to sum only sales greater than 3000?",
+  "a": "a",
+  "options": [
+    "SUMIF",
+    "COUNTIF",
+    "NOW",
+    "IF AND",
+    "IF OR",
+    "INDEX",
+    "Conditional Formatting"
+  ]
+},
+
+{
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fdfdfd; color: #333; padding: 25px; border: 2px solid #eee; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    
+    <strong style="font-size: 24px; color: #1a237e;">💻 Advanced <span style="color:#0288d1;">Excel Reporting Tools</span> with Real Data</strong><br><br>
+    
+    <em><u style="color:#01579b;">Why this matters:</u></em><br>
+    These advanced features help you create interactive dashboards, apply logic, and visualize trends effectively 📊✨<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">📘 Practical Examples with Rich Data:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
+      
+      <!-- Card 24 -->
+      <div style="background:#fff; border-left:6px solid #c2185b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#c2185b; font-size:20px; margin-bottom:8px;">24. Nested IF (IF > IF > IF)</h3>
+        <p>➡️ Grade students based on scores.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Score</th></tr>
+          <tr><td>88</td></tr>
+        </table>
+        <p><b>Formula:</b><br>
+        =IF(A2>=90,"A",IF(A2>=75,"B",IF(A2>=60,"C","Fail")))<br>
+        <b>Result:</b> B ✅</p>
+      </div>
+
+      <!-- Card 25 -->
+      <div style="background:#fff; border-left:6px solid #388e3c; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#388e3c; font-size:20px; margin-bottom:8px;">25. Conditional Formatting</h3>
+        <p>➡️ Highlight sales over 10,000 in green.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
+          <tr><th>Sales</th></tr>
+          <tr><td style="background:#c8e6c9;">12000</td></tr>
+          <tr><td>8000</td></tr>
+          <tr><td style="background:#c8e6c9;">15000</td></tr>
+        </table>
+        <p><b>Rule:</b> Format cells if value > 10000 ✅</p>
+      </div>
+
+      <!-- Card 26 -->
+      <div style="background:#fff; border-left:6px solid #1976d2; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#1976d2; font-size:20px; margin-bottom:8px;">26. CONCATENATE</h3>
+        <p>➡️ Join first & last names.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>First</th><th>Last</th></tr>
+          <tr><td>Omar</td><td>Ali</td></tr>
+        </table>
+        <p><b>Formula:</b> =CONCATENATE(A2," ",B2)<br>
+        <b>Result:</b> Omar Ali ✅</p>
+      </div>
+
+      <!-- Card 27 -->
+      <div style="background:#fff; border-left:6px solid #f57c00; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#f57c00; font-size:20px; margin-bottom:8px;">27. Pivot + Slicer + Date Filters</h3>
+        <p>➡️ Analyze sales by year, quarter, month, day.</p>
+        <p><b>Steps:</b><br>
+        - Insert PivotTable from sales data.<br>
+        - Add "Date" field to Rows.<br>
+        - Group by Year, Quarter, Month, Day.<br>
+        - Add Slicer for interactive filtering.<br>
+        ✅ Creates dynamic timeline analysis!</p>
+      </div>
+
+      <!-- Card 28 -->
+      <div style="background:#fff; border-left:6px solid #512da8; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#512da8; font-size:20px; margin-bottom:8px;">28. Table Filter + Dynamic Chart</h3>
+        <p>➡️ Filter a sales table and auto-update chart.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Product</th><th>Sales</th></tr>
+          <tr><td>Laptop</td><td>5000</td></tr>
+          <tr><td>Phone</td><td>7000</td></tr>
+          <tr><td>Tablet</td><td>4000</td></tr>
+        </table>
+        <p><b>Steps:</b><br>
+        - Convert data to Table.<br>
+        - Insert Chart linked to Table.<br>
+        - Use filters → Chart updates instantly ✅</p>
+      </div>
+
+      <!-- Card 29 -->
+      <div style="background:#fff; border-left:6px solid #00796b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#00796b; font-size:20px; margin-bottom:8px;">29. Pivot Charts</h3>
+        <p>➡️ Visualize PivotTable with charts.</p>
+        <p><b>Steps:</b><br>
+        - Insert PivotTable.<br>
+        - Add fields (Product → Rows, Sales → Values).<br>
+        - Insert PivotChart.<br>
+        ✅ Interactive charts with filters!</p>
+      </div>
+
+      <!-- Card 30 -->
+      <div style="background:#fff; border-left:6px solid #d32f2f; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#d32f2f; font-size:20px; margin-bottom:8px;">30. Data Validation</h3>
+        <p>➡️ Create dropdown for allowed cities.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
+          <tr><th>City</th></tr>
+          <tr><td>Dropdown: Cairo, Giza, Alex</td></tr>
+        </table>
+        <p><b>Steps:</b><br>
+        - Select cell.<br>
+        - Data → Data Validation.<br>
+        - Allow: List → Enter Cairo, Giza, Alex.<br>
+        ✅ Dropdown list created!</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#d84315;">Tip:</b> 
+<span style="color:#333;">Use these advanced tools to build professional dashboards and interactive reports 🔍📊✅.</span>`,
+
+  "q": "If you want to assign grades based on score ranges (A, B, C, Fail), which function should you use?",
+  "a": "a",
+  "options": [
+    "Nested IF",
+    "Conditional Formatting",
+    "CONCATENATE",
+    "Pivot + Slicer",
+    "Table Filter + Dynamic Chart",
+    "Pivot Charts",
+    "Data Validation"
+  ]
+},
+
+
+
+
+
+{
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fdfdfd; color: #333; padding: 25px; border: 2px solid #eee; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    
+    <strong style="font-size: 24px; color: #1a237e;">💻 More <span style="color:#0288d1;">Excel Essential Functions</span> with Real Datasets</strong><br><br>
+    
+    <em><u style="color:#01579b;">Why this matters:</u></em><br>
+    These functions help you clean, analyze, and manage large datasets faster. ⚡<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">📘 Practical Examples with Rich Data:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #c2185b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#c2185b; font-size:20px; margin-bottom:8px;">1. LEFT & RIGHT</h3>
+        <p>➡️ Extract part of a phone number.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Phone</th></tr>
+          <tr><td>0109876543</td></tr>
+        </table>
+        <p><b>Formula:</b><br>
+        =LEFT(A2,3) → 010 ✅<br>
+        =RIGHT(A2,4) → 6543 ✅</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #388e3c; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#388e3c; font-size:20px; margin-bottom:8px;">2. MID</h3>
+        <p>➡️ Extract middle characters from product codes.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
+          <tr><th>Code</th></tr>
+          <tr><td>PRD-2024-A1</td></tr>
+        </table>
+        <p><b>Formula:</b> =MID(A2,5,4)<br>
+        <b>Result:</b> 2024 ✅</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #1976d2; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#1976d2; font-size:20px; margin-bottom:8px;">3. LEN & TRIM</h3>
+        <p>➡️ Count characters and remove spaces.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
+          <tr><th>Text</th></tr>
+          <tr><td>"  Excel Training  "</td></tr>
+        </table>
+        <p><b>Formula:</b><br>
+        =LEN(A2) → 18 ✅<br>
+        =LEN(TRIM(A2)) → 14 ✅</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #f57c00; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#f57c00; font-size:20px; margin-bottom:8px;">4. SEARCH & FIND</h3>
+        <p>➡️ Find position of text inside a string.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
+          <tr><th>Email</th></tr>
+          <tr><td>kareem@example.com</td></tr>
+        </table>
+        <p><b>Formula:</b><br>
+        =SEARCH("@", A2) → 8 ✅<br>
+        =FIND(".", A2) → 15 ✅</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #512da8; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#512da8; font-size:20px; margin-bottom:8px;">5. REPLACE & SUBSTITUTE</h3>
+        <p>➡️ Fix or change parts of text.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:90%; text-align:center;">
+          <tr><th>Text</th></tr>
+          <tr><td>Excel2023</td></tr>
+        </table>
+        <p><b>Formula:</b><br>
+        =REPLACE(A2,6,4,"2025") → Excel2025 ✅<br>
+        =SUBSTITUTE(A2,"2023","2024") → Excel2024 ✅</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #00796b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#00796b; font-size:20px; margin-bottom:8px;">6. TEXTJOIN</h3>
+        <p>➡️ Combine multiple cells with a delimiter.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>First</th><th>Last</th><th>City</th></tr>
+          <tr><td>Omar</td><td>Ali</td><td>Cairo</td></tr>
+        </table>
+        <p><b>Formula:</b> =TEXTJOIN(", ", TRUE, A2:C2)<br>
+        <b>Result:</b> Omar, Ali, Cairo ✅</p>
+      </div>
+
+      <!-- Card 7 -->
+      <div style="background:#fff; border-left:6px solid #d32f2f; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+        <h3 style="color:#d32f2f; font-size:20px; margin-bottom:8px;">7. FILTER</h3>
+        <p>➡️ Extract sales above 3000.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Sales</th></tr>
+          <tr><td>2500</td></tr>
+          <tr><td>4000</td></tr>
+          <tr><td>5000</td></tr>
+        </table>
+        <p><b>Formula:</b> =FILTER(A2:A4, A2:A4>3000)<br>
+        <b>Result:</b> {4000; 5000} ✅</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#d84315;">Tip:</b> 
+<span style="color:#333;">Use these text and data functions to clean messy data and extract exactly what you need 🔍✅.</span>`,
+
+  "q": "If you want to extract all sales above 3000, which Excel function should you use?",
+  "a": "g",
+  "options": [
+    "LEFT",
+    "MID",
+    "SEARCH",
+    "SUBSTITUTE",
+    "TEXTJOIN",
+    "LEN",
+    "FILTER"
+  ]
+},
+
+
+{
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fafafa; color: #333; padding: 25px; border: 2px solid #ddd; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+    
+    <strong style="font-size: 24px; color: #1b5e20;">💻 Logical <span style="color:#2e7d32;">Excel Functions</span> with Data Examples</strong><br><br>
+    
+    <em><u style="color:#2e7d32;">Why this matters:</u></em><br>
+    Logical functions help automate decisions inside Excel by evaluating conditions. ✅<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">📘 Practical Logical Functions:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #2e7d32; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+        <h3 style="color:#2e7d32; font-size:20px; margin-bottom:8px;">1. IF</h3>
+        <p>➡️ Check if student passed (≥ 50).</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
+          <tr><th>Name</th><th>Score</th></tr>
+          <tr><td>Ali</td><td>72</td></tr>
+          <tr><td>Sara</td><td>45</td></tr>
+        </table>
+        <p><b>Formula:</b> =IF(B2>=50,"Pass","Fail")<br>
+        <b>Result:</b> Pass ✅</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #1565c0; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+        <h3 style="color:#1565c0; font-size:20px; margin-bottom:8px;">2. AND</h3>
+        <p>➡️ Approve bonus if sales ≥ 5000 AND attendance ≥ 90%.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
+          <tr><th>Name</th><th>Sales</th><th>Attendance</th></tr>
+          <tr><td>Kareem</td><td>6000</td><td>95%</td></tr>
+          <tr><td>Mona</td><td>4000</td><td>92%</td></tr>
+        </table>
+        <p><b>Formula:</b> =IF(AND(B2>=5000,C2>=90%),"Bonus","No Bonus")<br>
+        <b>Result:</b> Bonus ✅</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #ef6c00; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+        <h3 style="color:#ef6c00; font-size:20px; margin-bottom:8px;">3. OR</h3>
+        <p>➡️ Give discount if city = Cairo OR purchases ≥ 10.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:90%; text-align:center;">
+          <tr><th>Name</th><th>City</th><th>Purchases</th></tr>
+          <tr><td>Omar</td><td>Cairo</td><td>5</td></tr>
+          <tr><td>Heba</td><td>Alex</td><td>12</td></tr>
+        </table>
+        <p><b>Formula:</b> =IF(OR(B2="Cairo",C2>=10),"Discount","No Discount")<br>
+        <b>Result:</b> Discount ✅</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #6a1b9a; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+        <h3 style="color:#6a1b9a; font-size:20px; margin-bottom:8px;">4. NOT</h3>
+        <p>➡️ Flag absent employees (NOT Present).</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
+          <tr><th>Name</th><th>Status</th></tr>
+          <tr><td>Yasser</td><td>Present</td></tr>
+          <tr><td>Nada</td><td>Absent</td></tr>
+        </table>
+        <p><b>Formula:</b> =IF(NOT(B2="Present"),"Flag","OK")<br>
+        <b>Result:</b> OK ✅</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #ad1457; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+        <h3 style="color:#ad1457; font-size:20px; margin-bottom:8px;">5. IFS</h3>
+        <p>➡️ Grade students by score.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
+          <tr><th>Name</th><th>Score</th></tr>
+          <tr><td>Salma</td><td>85</td></tr>
+          <tr><td>Tarek</td><td>40</td></tr>
+        </table>
+        <p><b>Formula:</b> =IFS(B2>=90,"Excellent", B2>=50,"Pass", TRUE,"Fail")<br>
+        <b>Result:</b> Pass ✅</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #00897b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+        <h3 style="color:#00897b; font-size:20px; margin-bottom:8px;">6. SWITCH</h3>
+        <p>➡️ Convert numbers to weekdays.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:50%; text-align:center;">
+          <tr><th>Number</th></tr>
+          <tr><td>3</td></tr>
+        </table>
+        <p><b>Formula:</b> =SWITCH(A2,1,"Sunday",2,"Monday",3,"Tuesday",4,"Wednesday")<br>
+        <b>Result:</b> Tuesday ✅</p>
+      </div>
+
+      <!-- Card 7 -->
+      <div style="background:#fff; border-left:6px solid #c62828; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+        <h3 style="color:#c62828; font-size:20px; margin-bottom:8px;">7. XOR</h3>
+        <p>➡️ Check if only one condition is true (not both).</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
+          <tr><th>Condition A</th><th>Condition B</th></tr>
+          <tr><td>TRUE</td><td>FALSE</td></tr>
+          <tr><td>TRUE</td><td>TRUE</td></tr>
+        </table>
+        <p><b>Formula:</b> =XOR(A2,B2)<br>
+        <b>Result:</b> TRUE ✅</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#e53935;">Tip:</b> 
+<span style="color:#333;">Logical functions allow you to design smart sheets that react automatically to different scenarios 🤖✅.</span>`,
+
+  "q": "Which function should you use if you want to apply multiple conditions and all must be TRUE?",
+  "a": "b",
+  "options": [
+    "OR",
+    "AND",
+    "NOT",
+    "SWITCH"
+  ]
+},
+
+
+
+
+{
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fefefe; color: #333; padding: 25px; border: 2px solid #ddd; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+    
+    <strong style="font-size: 24px; color: #002b5c;">💻 Advanced <span style="color:#0078d7;">Excel Functions with Rich Examples</span></strong><br><br>
+    
+    <em><u style="color:#0056b3;">Why this matters:</u></em><br>
+    Using real-world datasets with advanced formulas helps learners unlock Excel’s full analytical power. 🚀<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">📘 Functions with Extended Practical Examples:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #ff5722; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
+        <h3 style="color:#ff5722; font-size:20px; margin-bottom:8px;">1. HLOOKUP</h3>
+        <p>➡️ Get Q2 sales for Product B.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th></th><th>Q1</th><th>Q2</th><th>Q3</th></tr>
+          <tr><td>Product A</td><td>2000</td><td>2500</td><td>3000</td></tr>
+          <tr><td>Product B</td><td>1500</td><td>1800</td><td>2100</td></tr>
+        </table>
+        <p><b>Formula:</b> =HLOOKUP("Q2", B1:D3, 3, FALSE)<br>
+        <b>Result:</b> 1800 ✅</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #2196f3; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
+        <h3 style="color:#2196f3; font-size:20px; margin-bottom:8px;">2. XLOOKUP</h3>
+        <p>➡️ Find city for customer ID 205.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>ID</th><th>Name</th><th>City</th></tr>
+          <tr><td>201</td><td>Omar</td><td>Cairo</td></tr>
+          <tr><td>205</td><td>Nada</td><td>Alexandria</td></tr>
+          <tr><td>210</td><td>Hossam</td><td>Tanta</td></tr>
+        </table>
+        <p><b>Formula:</b> =XLOOKUP(205, A2:A4, C2:C4)<br>
+        <b>Result:</b> Alexandria ✅</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #4caf50; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
+        <h3 style="color:#4caf50; font-size:20px; margin-bottom:8px;">3. COUNTIFS</h3>
+        <p>➡️ Count orders from 2024 in Cairo.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>City</th><th>Year</th><th>Order</th></tr>
+          <tr><td>Cairo</td><td>2024</td><td>15</td></tr>
+          <tr><td>Alex</td><td>2023</td><td>10</td></tr>
+          <tr><td>Cairo</td><td>2024</td><td>20</td></tr>
+          <tr><td>Tanta</td><td>2024</td><td>5</td></tr>
+        </table>
+        <p><b>Formula:</b> =COUNTIFS(A2:A5,"Cairo", B2:B5,2024)<br>
+        <b>Result:</b> 2 ✅</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #9c27b0; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
+        <h3 style="color:#9c27b0; font-size:20px; margin-bottom:8px;">4. AVERAGEIFS</h3>
+        <p>➡️ Average sales in 2024 only.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>Year</th><th>Sales</th></tr>
+          <tr><td>2024</td><td>5000</td></tr>
+          <tr><td>2024</td><td>7000</td></tr>
+          <tr><td>2023</td><td>4000</td></tr>
+        </table>
+        <p><b>Formula:</b> =AVERAGEIFS(B2:B4, A2:A4,2024)<br>
+        <b>Result:</b> 6000 ✅</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #795548; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
+        <h3 style="color:#795548; font-size:20px; margin-bottom:8px;">5. CONCAT</h3>
+        <p>➡️ Join first and last names.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
+          <tr><th>First</th><th>Last</th></tr>
+          <tr><td>Ali</td><td>Hassan</td></tr>
+          <tr><td>Sara</td><td>Mostafa</td></tr>
+        </table>
+        <p><b>Formula:</b> =CONCAT(A2," ",B2)<br>
+        <b>Result:</b> Ali Hassan ✅</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #ff9800; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
+        <h3 style="color:#ff9800; font-size:20px; margin-bottom:8px;">6. PROPER, UPPER, LOWER</h3>
+        <p>➡️ Format text for consistency.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:50%; text-align:center;">
+          <tr><th>Name</th></tr>
+          <tr><td>aLI hASSAN</td></tr>
+        </table>
+        <p><b>Formula:</b><br>
+        =PROPER(A2) → Ali Hassan ✅<br>
+        =UPPER(A2) → ALI HASSAN ✅<br>
+        =LOWER(A2) → ali hassan ✅</p>
+      </div>
+
+      <!-- Card 7 -->
+      <div style="background:#fff; border-left:6px solid #3f51b5; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
+        <h3 style="color:#3f51b5; font-size:20px; margin-bottom:8px;">7. UNIQUE + SORT</h3>
+        <p>➡️ Extract unique cities sorted alphabetically.</p>
+        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
+          <tr><th>City</th></tr>
+          <tr><td>Cairo</td></tr>
+          <tr><td>Alex</td></tr>
+          <tr><td>Cairo</td></tr>
+          <tr><td>Tanta</td></tr>
+        </table>
+        <p><b>Formula:</b> =SORT(UNIQUE(A2:A5))<br>
+        <b>Result:</b> Alex, Cairo, Tanta ✅</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#e60000;">Tip:</b> 
+<span style="color:#333;">Practice by copying the tables above into Excel and testing the formulas. Try changing values to see how results update dynamically. 🔄✅</span>`,
+
+  "q": "If you want to find the average sales in 2024 only, which Excel function should you use?",
+  "a": "d",
+  "options": [
+    "COUNTIFS",
+    "XLOOKUP",
+    "HLOOKUP",
+    "AVERAGEIFS"
+  ]
+},
+
+
+
 
 {
   "passage": `<div style="margin-top: 120px;">
