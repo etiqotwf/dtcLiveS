@@ -254,11 +254,21 @@ input[type="radio"] {
         </table>
         <p><b>Formula:</b> =SIGN(A2)<br>
         <b>Result:</b> -1 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Returns -1 if the number is negative, 0 if it's zero, and 1 if it's positive.</li>
+            <li><b>Arguments:</b> <i>number</i> — a single numeric value or a cell that contains a number.</li>
+            <li><b>How it works:</b> Excel evaluates the numeric value and returns one of three integers (-1, 0, 1) indicating the sign.</li>
+            <li><b>When to use:</b> Use to classify values quickly (profit vs. loss vs. neutral) or as part of conditional calculations: <code>=IF(SIGN(A2)=-1,"Loss","Gain")</code>.</li>
+            <li><b>Tips:</b> SIGN accepts numeric inputs only. Text or empty cells will produce errors or 0 respectively.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 2: LEFT & RIGHT -->
       <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. LEFT & RIGHT</h3>
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. LEFT &amp; RIGHT</h3>
         <p>➡️ Extract characters from text.</p>
         <table border="1" cellpadding="6" style="border-collapse: collapse; width:50%; text-align:center;">
           <tr><th>Text</th></tr>
@@ -266,6 +276,16 @@ input[type="radio"] {
         </table>
         <p><b>Formula (LEFT):</b> =LEFT(A2,5) → Excel<br>
         <b>Formula (RIGHT):</b> =RIGHT(A2,4) → 2025 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What they do:</b> LEFT returns the leftmost characters; RIGHT returns the rightmost characters from a text string.</li>
+            <li><b>Arguments:</b> <i>text</i>, <i>num_chars</i> — number of characters to extract.</li>
+            <li><b>How they work:</b> LEFT("Excel2025",5) returns first 5 characters. RIGHT("Excel2025",4) returns last 4 characters.</li>
+            <li><b>When to use:</b> Extract prefixes, codes, suffixes, or years from strings. Combine with LEN, FIND, or SEARCH for dynamic extraction.</li>
+            <li><b>Tips:</b> If num_chars > length of text, the whole text is returned. Use VALUE(...) to convert numeric substrings to numbers.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 3: CHOOSE -->
@@ -274,6 +294,16 @@ input[type="radio"] {
         <p>➡️ Select a value from a list by index number.</p>
         <p><b>Formula:</b> =CHOOSE(2, "Red","Green","Blue")<br>
         <b>Result:</b> Green ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Returns the nth value from a list, where n is the index number (1-based).</li>
+            <li><b>Arguments:</b> <i>index_num</i>, <i>value1</i>, <i>value2</i>, ...</li>
+            <li><b>How it works:</b> CHOOSE(2, ...) returns the second item in the list. Index starts at 1.</li>
+            <li><b>When to use:</b> Map numeric codes to labels, build small lookup-like logic without tables, or pick among alternate formulas using nested CHOOSE.</li>
+            <li><b>Tips:</b> If index is out of range, you get an error. For table-based lookups use INDEX/MATCH or VLOOKUP for scalability.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 4: CONVERT -->
@@ -282,6 +312,16 @@ input[type="radio"] {
         <p>➡️ Convert values from one unit to another.</p>
         <p><b>Formula:</b> =CONVERT(100,"km","mi")<br>
         <b>Result:</b> 62.1371 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Converts a numeric value from one measurement unit to another (distance, mass, temperature, etc.).</li>
+            <li><b>Arguments:</b> <i>value</i>, <i>from_unit</i>, <i>to_unit</i>. Units use standard codes like "km","mi","kg","lb","C","F".</li>
+            <li><b>How it works:</b> Excel applies an internal conversion factor to return the equivalent value in the target unit.</li>
+            <li><b>When to use:</b> When consolidating data from different unit systems or preparing reports for international audiences.</li>
+            <li><b>Tips:</b> Check available unit codes (Excel's help). Some units or regional settings might differ between Excel versions.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 5: PV -->
@@ -290,6 +330,16 @@ input[type="radio"] {
         <p>➡️ Calculate present value of investment.</p>
         <p><b>Formula:</b> =PV(5%/12,60,-500)<br>
         <b>Result:</b> -25,978.56 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Computes the present value of a series of future payments (annuity) or a lump sum discounted at a specified interest rate.</li>
+            <li><b>Arguments:</b> <i>rate</i>, <i>nper</i>, <i>pmt</i>, [<i>fv</i>], [<i>type</i>]. <i>type</i>=0 means payments at period end, =1 at period start.</li>
+            <li><b>How it works:</b> Discounts future payments and/or future value back to today using the rate per period and number of periods.</li>
+            <li><b>When to use:</b> Loan valuation, retirement planning, figuring how much to invest now to reach a future goal.</li>
+            <li><b>Tips:</b> Sign convention matters: payments you make are usually negative. Convert annual rates to period rates (e.g., divide by 12 for monthly).</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 6: WORKDAY -->
@@ -302,6 +352,16 @@ input[type="radio"] {
         </table>
         <p><b>Formula:</b> =WORKDAY(A2,B2)<br>
         <b>Result:</b> 15-Sep-2025 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Returns a date that is a given number of working days away from a start date, excluding weekends and (optionally) holidays.</li>
+            <li><b>Arguments:</b> <i>start_date</i>, <i>days</i>, [<i>holidays</i>] — an optional range of dates to exclude.</li>
+            <li><b>How it works:</b> Adds the specified number of workdays to the start date, skipping weekends (Sat/Sun by default). Use WORKDAY.INTL for custom weekend patterns.</li>
+            <li><b>When to use:</b> Project scheduling, delivery dates, SLA calculations where only business days count.</li>
+            <li><b>Tips:</b> Provide holidays as a cell range. For different weekend definitions use WORKDAY.INTL.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 7: NETWORKDAYS -->
@@ -314,6 +374,16 @@ input[type="radio"] {
         </table>
         <p><b>Formula:</b> =NETWORKDAYS(A2,B2)<br>
         <b>Result:</b> 11 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Returns the count of business days between two dates, excluding weekends and optional holidays.</li>
+            <li><b>Arguments:</b> <i>start_date</i>, <i>end_date</i>, [<i>holidays</i>].</li>
+            <li><b>How it works:</b> Calculates inclusive days between dates, subtracting weekend days (Sat/Sun) and any dates provided in the holidays range. NETWORKDAYS.INTL allows custom weekend masks.</li>
+            <li><b>When to use:</b> To compute staff required, leave balances, or the number of available working days in a period.</li>
+            <li><b><i>Note:</i></b> The function returns an integer and treats start and end dates inclusively.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 8: COMBINE (TEXTJOIN) -->
@@ -328,6 +398,16 @@ input[type="radio"] {
         </table>
         <p><b>Formula:</b> =TEXTJOIN(", ", TRUE, A2:A4)<br>
         <b>Result:</b> Ali, Sara, Kareem ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Joins multiple text items using a delimiter, with the option to ignore empty cells.</li>
+            <li><b>Arguments:</b> <i>delimiter</i>, <i>ignore_empty</i> (TRUE/FALSE), <i>text1</i>, <i>text2</i>, ... or ranges.</li>
+            <li><b>How it works:</b> Concatenates values in the given range(s) separated by the delimiter. If ignore_empty is TRUE, blank cells are skipped.</li>
+            <li><b>When to use:</b> Build CSV lists, combine names, or create readable labels from columns.</li>
+            <li><b>Tips:</b> Prefer TEXTJOIN over CONCATENATE or & when combining ranges; available in newer Excel versions.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 9: OFFSET -->
@@ -340,8 +420,17 @@ input[type="radio"] {
           <tr><td>Feb</td><td>300</td></tr>
           <tr><td>Mar</td><td>400</td></tr>
         </table>
-        <p><b>Formula:</b> =OFFSET(B2,2,0)<br>
-        <b>Result:</b> 400 ✅</p>
+        <p><b>Formula:</b> =OFFSET(B2,2,0) &nbsp; <b>Result:</b> 400 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Returns a reference to a range that is a specified number of rows and columns from a given reference.</li>
+            <li><b>Arguments:</b> <i>reference</i>, <i>rows</i>, <i>cols</i>, [<i>height</i>], [<i>width</i>].</li>
+            <li><b>How it works:</b> OFFSET(B2,2,0) moves 2 rows down from B2 and returns that cell/range. Often used inside functions like SUM: =SUM(OFFSET(...)).</li>
+            <li><b>When to use:</b> Create dynamic ranges for charts or calculations when the start point moves or the size changes.</li>
+            <li><b>Warnings:</b> OFFSET is a volatile function — it recalculates on every sheet change, which can slow large workbooks. INDEX can be a non-volatile alternative.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 10: SUMIFS -->
@@ -356,6 +445,16 @@ input[type="radio"] {
         </table>
         <p><b>Formula:</b> =SUMIFS(C2:C4,A2:A4,"Sales",B2:B4,2025)<br>
         <b>Result:</b> 5500 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Sums values in a range that meet multiple criteria across corresponding ranges.</li>
+            <li><b>Arguments:</b> <i>sum_range</i>, <i>criteria_range1</i>, <i>criteria1</i>, [<i>criteria_range2</i>, <i>criteria2</i>, ...].</li>
+            <li><b>How it works:</b> Evaluates each criteria pair and sums the entries in sum_range where all criteria are TRUE.</li>
+            <li><b>When to use:</b> Financial reports, conditional totals by category/date/region, multi-condition aggregations.</li>
+            <li><b>Tips:</b> sum_range should be the same size as criteria ranges. Use wildcard characters (*, ?) for partial matches and comparison operators inside strings (">100").</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 11: AGGREGATE -->
@@ -370,6 +469,16 @@ input[type="radio"] {
         </table>
         <p><b>Formula:</b> =AGGREGATE(9,6,A2:A4)<br>
         <b>Result:</b> 30 ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Performs a range of functions (SUM, AVERAGE, SMALL, LARGE, etc.) while allowing you to ignore errors, hidden rows, or nested SUBTOTAL/AGGREGATE results.</li>
+            <li><b>Arguments:</b> <i>function_num</i> (e.g., 9 = SUM), <i>options</i> (bitmask to ignore errors/hidden rows), <i>array</i>, [<i>k</i>].</li>
+            <li><b>How it works:</b> Choose the operation via function_num and specify options (e.g., 6 tells Excel to ignore error values). AGGREGATE(9,6,A2:A4) returns SUM of A2:A4 ignoring errors.</li>
+            <li><b>When to use:</b> When datasets may contain errors or hidden rows and you still need reliable aggregations without cleaning data first.</li>
+            <li><b>Tips:</b> Refer to Excel documentation for function_num codes. AGGREGATE is more flexible than SUBTOTAL.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 12: Recording Macro -->
@@ -378,6 +487,16 @@ input[type="radio"] {
         <p>➡️ Automate repetitive tasks.</p>
         <p><b>Action:</b> Go to Developer → Record Macro → Perform actions → Stop Recording<br>
         <b>Result:</b> Macro is saved for reuse ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Records a sequence of Excel actions and converts them into VBA code that can be replayed later.</li>
+            <li><b>How to record:</b> Developer → Record Macro. Choose a name, assign a shortcut (optional), and select where to store the macro (This Workbook, New Workbook, Personal Macro Workbook).</li>
+            <li><b>How it works:</b> Excel captures user actions (clicks, formatting, entries) and generates VBA. You can edit the VBA later in the Visual Basic Editor to improve or generalize the macro.</li>
+            <li><b>When to use:</b> Repetitive formatting, report generation, data transformation steps that you need to run frequently.</li>
+            <li><b>Tips:</b> Use Relative References option to make recorded macros adaptable to different starting cells. Always review and clean the generated VBA for robustness.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Card 13: Developer Tools Insert Controls -->
@@ -386,6 +505,15 @@ input[type="radio"] {
         <p>➡️ Add interactive buttons, checkboxes, or dropdowns.</p>
         <p><b>Action:</b> Developer Tab → Insert → Choose Control → Place in sheet<br>
         <b>Result:</b> Interactive form element added ✅</p>
+        <div style="font-size:13px; color:#333; margin-top:6px;">
+          <b>Detailed explanation (EN):</b>
+          <ul>
+            <li><b>What it does:</b> Lets you insert Form Controls (buttons, checkboxes, combo boxes) or ActiveX controls to build interactive worksheets and dashboards.</li>
+            <li><b>How to use:</b> Developer → Insert → pick a control. For Form Controls, right-click to assign a macro or link to a cell. ActiveX controls have more properties (Design Mode to edit).</li>
+            <li><b>When to use:</b> Create interactive forms, dashboards, or user inputs that trigger macros or link values to cells.</li>
+            <li><b>Tips:</b> Prefer Form Controls for portability across Excel platforms. ActiveX offers more features but may not work on Mac and can be less stable.</li>
+          </ul>
+        </div>
       </div>
 
     </div>
@@ -404,6 +532,7 @@ input[type="radio"] {
     "AGGREGATE"
   ]
 },
+
 
 
 
