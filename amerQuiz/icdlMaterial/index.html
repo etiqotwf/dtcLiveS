@@ -156,7 +156,7 @@ input[type="radio"] {
 
 </h1>
         <h2></h2>
-<p>Course Name: <input type="text" id="courseName" value="ShreifPrivate Course" readonly style="background-color: #f0f0f0; border: none;"></p>
+<p>Course Name: <input type="text" id="courseName" value="IcdlMaterial" readonly style="background-color: #f0f0f0; border: none;"></p>
         <p>Enter Your Name: <input type="text" id="traineeName"></p>
         <p>Enter Your Phone Number: <input type="text" id="traineePhone"></p>
         <p>Enter Password: <input type="password" id="password"></p>
@@ -231,496 +231,644 @@ input[type="radio"] {
     const trueFalseQuestions = [
 
 
-    {
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fdfdfd; color: #333; padding: 25px; border: 2px solid #eee; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    
-    <strong style="font-size: 24px; color: #1a237e;">💻 Powerful <span style="color:#0288d1;">Excel Advanced Functions</span> with Real Examples</strong><br><br>
-    
-    <em><u style="color:#01579b;">Why this matters:</u></em><br>
-    These functions allow you to calculate, filter, and manage reports with conditions and smart logic. 🚀<br><br>
-
-    <strong style="font-size: 20px; color:#004080;">📘 Practical Examples with Real Datasets:</strong><br><br>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #c2185b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#c2185b; font-size:20px; margin-bottom:8px;">1. SUMIF</h3>
-        <p>➡️ Sum sales greater than 3000.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
-          <tr><th>Sales</th></tr>
-          <tr><td>2500</td></tr>
-          <tr><td>4000</td></tr>
-          <tr><td>5000</td></tr>
-        </table>
-        <p><b>Formula:</b> =SUMIF(A2:A4, ">3000")<br>
-        <b>Result:</b> 9000 ✅</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #388e3c; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#388e3c; font-size:20px; margin-bottom:8px;">2. COUNTIF</h3>
-        <p>➡️ Count students scoring above 70.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
-          <tr><th>Scores</th></tr>
-          <tr><td>65</td></tr>
-          <tr><td>72</td></tr>
-          <tr><td>85</td></tr>
-        </table>
-        <p><b>Formula:</b> =COUNTIF(A2:A4, ">70")<br>
-        <b>Result:</b> 2 ✅</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #1976d2; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#1976d2; font-size:20px; margin-bottom:8px;">3. NOW</h3>
-        <p>➡️ Display the current date & time.</p>
-        <p><b>Formula:</b> =NOW()<br>
-        <b>Result:</b> 03/09/2025 13:45 ✅ (auto-updates)</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #f57c00; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#f57c00; font-size:20px; margin-bottom:8px;">4. IF + AND</h3>
-        <p>➡️ Check if a student passed both Math & English.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>Math</th><th>English</th></tr>
-          <tr><td>80</td><td>75</td></tr>
-        </table>
-        <p><b>Formula:</b> =IF(AND(A2>=70,B2>=70),"Pass","Fail")<br>
-        <b>Result:</b> Pass ✅</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #512da8; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#512da8; font-size:20px; margin-bottom:8px;">5. IF + OR</h3>
-        <p>➡️ Pass if Math OR English ≥ 70.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>Math</th><th>English</th></tr>
-          <tr><td>65</td><td>72</td></tr>
-        </table>
-        <p><b>Formula:</b> =IF(OR(A2>=70,B2>=70),"Pass","Fail")<br>
-        <b>Result:</b> Pass ✅</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #00796b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#00796b; font-size:20px; margin-bottom:8px;">6. INDEX</h3>
-        <p>➡️ Return 2nd product from a list.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:90%; text-align:center;">
-          <tr><th>Products</th></tr>
-          <tr><td>Laptop</td></tr>
-          <tr><td>Tablet</td></tr>
-          <tr><td>Phone</td></tr>
-        </table>
-        <p><b>Formula:</b> =INDEX(A2:A4,2)<br>
-        <b>Result:</b> Tablet ✅</p>
-      </div>
-
-      <!-- Card 7 -->
-      <div style="background:#fff; border-left:6px solid #d32f2f; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#d32f2f; font-size:20px; margin-bottom:8px;">7. Conditional Formatting</h3>
-        <p>➡️ Highlight values greater than 80.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
-          <tr><th>Scores</th></tr>
-          <tr><td style="background:#ffccbc;">65</td></tr>
-          <tr><td style="background:#c8e6c9;">85</td></tr>
-          <tr><td style="background:#c8e6c9;">92</td></tr>
-        </table>
-        <p><b>Rule:</b> Apply format if value > 80 ✅</p>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#d84315;">Tip:</b> 
-<span style="color:#333;">These functions are your best tools to make reports dynamic, logical, and visually clear 📊✅.</span>`,
-
-  "q": "Which Excel function would you use to sum only sales greater than 3000?",
-  "a": "a",
-  "options": [
-    "SUMIF",
-    "COUNTIF",
-    "NOW",
-    "IF AND",
-    "IF OR",
-    "INDEX",
-    "Conditional Formatting"
-  ]
-},
-
-{
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fdfdfd; color: #333; padding: 25px; border: 2px solid #eee; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    
-    <strong style="font-size: 24px; color: #1a237e;">💻 Advanced <span style="color:#0288d1;">Excel Reporting Tools</span> with Real Data</strong><br><br>
-    
-    <em><u style="color:#01579b;">Why this matters:</u></em><br>
-    These advanced features help you create interactive dashboards, apply logic, and visualize trends effectively 📊✨<br><br>
-
-    <strong style="font-size: 20px; color:#004080;">📘 Practical Examples with Rich Data:</strong><br><br>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
-      
-      <!-- Card 24 -->
-      <div style="background:#fff; border-left:6px solid #c2185b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#c2185b; font-size:20px; margin-bottom:8px;">24. Nested IF (IF > IF > IF)</h3>
-        <p>➡️ Grade students based on scores.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
-          <tr><th>Score</th></tr>
-          <tr><td>88</td></tr>
-        </table>
-        <p><b>Formula:</b><br>
-        =IF(A2>=90,"A",IF(A2>=75,"B",IF(A2>=60,"C","Fail")))<br>
-        <b>Result:</b> B ✅</p>
-      </div>
-
-      <!-- Card 25 -->
-      <div style="background:#fff; border-left:6px solid #388e3c; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#388e3c; font-size:20px; margin-bottom:8px;">25. Conditional Formatting</h3>
-        <p>➡️ Highlight sales over 10,000 in green.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
-          <tr><th>Sales</th></tr>
-          <tr><td style="background:#c8e6c9;">12000</td></tr>
-          <tr><td>8000</td></tr>
-          <tr><td style="background:#c8e6c9;">15000</td></tr>
-        </table>
-        <p><b>Rule:</b> Format cells if value > 10000 ✅</p>
-      </div>
-
-      <!-- Card 26 -->
-      <div style="background:#fff; border-left:6px solid #1976d2; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#1976d2; font-size:20px; margin-bottom:8px;">26. CONCATENATE</h3>
-        <p>➡️ Join first & last names.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>First</th><th>Last</th></tr>
-          <tr><td>Omar</td><td>Ali</td></tr>
-        </table>
-        <p><b>Formula:</b> =CONCATENATE(A2," ",B2)<br>
-        <b>Result:</b> Omar Ali ✅</p>
-      </div>
-
-      <!-- Card 27 -->
-      <div style="background:#fff; border-left:6px solid #f57c00; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#f57c00; font-size:20px; margin-bottom:8px;">27. Pivot + Slicer + Date Filters</h3>
-        <p>➡️ Analyze sales by year, quarter, month, day.</p>
-        <p><b>Steps:</b><br>
-        - Insert PivotTable from sales data.<br>
-        - Add "Date" field to Rows.<br>
-        - Group by Year, Quarter, Month, Day.<br>
-        - Add Slicer for interactive filtering.<br>
-        ✅ Creates dynamic timeline analysis!</p>
-      </div>
-
-      <!-- Card 28 -->
-      <div style="background:#fff; border-left:6px solid #512da8; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#512da8; font-size:20px; margin-bottom:8px;">28. Table Filter + Dynamic Chart</h3>
-        <p>➡️ Filter a sales table and auto-update chart.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>Product</th><th>Sales</th></tr>
-          <tr><td>Laptop</td><td>5000</td></tr>
-          <tr><td>Phone</td><td>7000</td></tr>
-          <tr><td>Tablet</td><td>4000</td></tr>
-        </table>
-        <p><b>Steps:</b><br>
-        - Convert data to Table.<br>
-        - Insert Chart linked to Table.<br>
-        - Use filters → Chart updates instantly ✅</p>
-      </div>
-
-      <!-- Card 29 -->
-      <div style="background:#fff; border-left:6px solid #00796b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#00796b; font-size:20px; margin-bottom:8px;">29. Pivot Charts</h3>
-        <p>➡️ Visualize PivotTable with charts.</p>
-        <p><b>Steps:</b><br>
-        - Insert PivotTable.<br>
-        - Add fields (Product → Rows, Sales → Values).<br>
-        - Insert PivotChart.<br>
-        ✅ Interactive charts with filters!</p>
-      </div>
-
-      <!-- Card 30 -->
-      <div style="background:#fff; border-left:6px solid #d32f2f; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#d32f2f; font-size:20px; margin-bottom:8px;">30. Data Validation</h3>
-        <p>➡️ Create dropdown for allowed cities.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
-          <tr><th>City</th></tr>
-          <tr><td>Dropdown: Cairo, Giza, Alex</td></tr>
-        </table>
-        <p><b>Steps:</b><br>
-        - Select cell.<br>
-        - Data → Data Validation.<br>
-        - Allow: List → Enter Cairo, Giza, Alex.<br>
-        ✅ Dropdown list created!</p>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#d84315;">Tip:</b> 
-<span style="color:#333;">Use these advanced tools to build professional dashboards and interactive reports 🔍📊✅.</span>`,
-
-  "q": "If you want to assign grades based on score ranges (A, B, C, Fail), which function should you use?",
-  "a": "a",
-  "options": [
-    "Nested IF",
-    "Conditional Formatting",
-    "CONCATENATE",
-    "Pivot + Slicer",
-    "Table Filter + Dynamic Chart",
-    "Pivot Charts",
-    "Data Validation"
-  ]
-},
-
-
-
 
 
 {
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fdfdfd; color: #333; padding: 25px; border: 2px solid #eee; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  "passage": `<div style="margin-top: 40px; max-width: 1100px; margin-left:auto; margin-right:auto; position: relative;">
+
+  <!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 64px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧑‍💻</div>
+
+  <!-- Main Container -->
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #f7fbff, #ffffff); color: #222; padding: 34px; border: 1px solid #dfefff; border-radius: 22px; font-size: 18px; line-height:1.7; box-shadow: 0 10px 28px rgba(0,0,0,0.08); position: relative; z-index: 5;">
     
-    <strong style="font-size: 24px; color: #1a237e;">💻 More <span style="color:#0288d1;">Excel Essential Functions</span> with Real Datasets</strong><br><br>
+    <strong style="font-size: 28px; color: #003b70; display:block; margin-bottom:18px;">
+      ⚡ Practical IT Tasks: Intermediate Level
+    </strong>
     
-    <em><u style="color:#01579b;">Why this matters:</u></em><br>
-    These functions help you clean, analyze, and manage large datasets faster. ⚡<br><br>
+    <p style="margin-bottom:20px; color:#214b77;">
+      <em><u style="color:#0056b3;">Intermediate Challenge (Each card):</u></em><br>
+      Each card includes: clear steps, a multiple-choice question, the correct answer with explanation, a simple example, and a short practice table. Content is simplified to match intermediate students.
+    </p>
 
-    <strong style="font-size: 20px; color:#004080;">📘 Practical Examples with Rich Data:</strong><br><br>
+    <!-- Cards Grid (medium level tasks) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; align-items: start;">
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #c2185b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#c2185b; font-size:20px; margin-bottom:8px;">1. LEFT & RIGHT</h3>
-        <p>➡️ Extract part of a phone number.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
-          <tr><th>Phone</th></tr>
-          <tr><td>0109876543</td></tr>
-        </table>
-        <p><b>Formula:</b><br>
-        =LEFT(A2,3) → 010 ✅<br>
-        =RIGHT(A2,4) → 6543 ✅</p>
+      <!-- Word -->
+      <div class="task-card" style="--color:#0078d7; padding:30px; min-height:460px;">
+        <h3>Task 1: Microsoft Word</h3>
+        <p><strong>Steps:</strong><br>
+        Create a school report with a title, headings, and insert a picture.</p>
+
+        <p><strong>Question:</strong><br>
+        Which feature is best for creating consistent titles and headings?</p>
+        <ul>
+          <li>A) Bold/Italic only</li>
+          <li>B) Styles (Heading 1, Heading 2)</li>
+          <li>C) Page Break</li>
+          <li>D) Track Changes</li>
+        </ul>
+
+        <div class="explanation" style="background:#f0f6ff; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4>Answer & Explanation</h4>
+          <p><strong>Correct:</strong> B) Styles (Heading 1, Heading 2).</p>
+          <p>Explanation: Styles make the report professional, allow automatic table of contents, and keep formatting consistent.</p>
+        </div>
       </div>
 
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #388e3c; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#388e3c; font-size:20px; margin-bottom:8px;">2. MID</h3>
-        <p>➡️ Extract middle characters from product codes.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
-          <tr><th>Code</th></tr>
-          <tr><td>PRD-2024-A1</td></tr>
-        </table>
-        <p><b>Formula:</b> =MID(A2,5,4)<br>
-        <b>Result:</b> 2024 ✅</p>
+      <!-- Excel -->
+      <div class="task-card" style="--color:#00b294; padding:30px; min-height:460px;">
+        <h3>Task 2: Microsoft Excel</h3>
+        <p><strong>Steps:</strong><br>
+        Make a student grade sheet and calculate averages.</p>
+
+        <p><strong>Question:</strong><br>
+        Which function quickly calculates the average grade?</p>
+        <ul>
+          <li>A) =SUM()</li>
+          <li>B) =IF()</li>
+          <li>C) =AVERAGE()</li>
+          <li>D) =MAX()</li>
+        </ul>
+
+        <div class="explanation" style="background:#f0fff4; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4>Answer & Explanation</h4>
+          <p><strong>Correct:</strong> C) =AVERAGE().</p>
+          <p>Explanation: The AVERAGE function calculates the mean of selected numbers, which is ideal for grades.</p>
+        </div>
       </div>
 
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #1976d2; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#1976d2; font-size:20px; margin-bottom:8px;">3. LEN & TRIM</h3>
-        <p>➡️ Count characters and remove spaces.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
-          <tr><th>Text</th></tr>
-          <tr><td>"  Excel Training  "</td></tr>
-        </table>
-        <p><b>Formula:</b><br>
-        =LEN(A2) → 18 ✅<br>
-        =LEN(TRIM(A2)) → 14 ✅</p>
+      <!-- Access -->
+      <div class="task-card" style="--color:#e81123; padding:30px; min-height:460px;">
+        <h3>Task 3: Microsoft Access</h3>
+        <p><strong>Steps:</strong><br>
+        Create a simple database of students with ID, Name, and Grade.</p>
+
+        <p><strong>Question:</strong><br>
+        Why do we set the StudentID as a primary key?</p>
+        <ul>
+          <li>A) To decorate the table</li>
+          <li>B) To uniquely identify each student</li>
+          <li>C) To sort names alphabetically</li>
+          <li>D) To calculate grades automatically</li>
+        </ul>
+
+        <div class="explanation" style="background:#fff5f5; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4>Answer & Explanation</h4>
+          <p><strong>Correct:</strong> B) To uniquely identify each student.</p>
+          <p>Explanation: Primary key ensures no two students have the same ID, which keeps the data organized.</p>
+        </div>
       </div>
 
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #f57c00; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#f57c00; font-size:20px; margin-bottom:8px;">4. SEARCH & FIND</h3>
-        <p>➡️ Find position of text inside a string.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
-          <tr><th>Email</th></tr>
-          <tr><td>kareem@example.com</td></tr>
-        </table>
-        <p><b>Formula:</b><br>
-        =SEARCH("@", A2) → 8 ✅<br>
-        =FIND(".", A2) → 15 ✅</p>
+      <!-- PowerPoint -->
+      <div class="task-card" style="--color:#ffb900; padding:30px; min-height:460px;">
+        <h3>Task 4: PowerPoint</h3>
+        <p><strong>Steps:</strong><br>
+        Create a short presentation with slide titles and pictures.</p>
+
+        <p><strong>Question:</strong><br>
+        Which feature makes text or pictures move onto the slide?</p>
+        <ul>
+          <li>A) Transition</li>
+          <li>B) Animation</li>
+          <li>C) Hyperlink</li>
+          <li>D) Theme</li>
+        </ul>
+
+        <div class="explanation" style="background:#fffaf0; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4>Answer & Explanation</h4>
+          <p><strong>Correct:</strong> B) Animation.</p>
+          <p>Explanation: Animations control how objects (text, images) appear or move, while transitions apply to the whole slide.</p>
+        </div>
       </div>
 
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #512da8; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#512da8; font-size:20px; margin-bottom:8px;">5. REPLACE & SUBSTITUTE</h3>
-        <p>➡️ Fix or change parts of text.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:90%; text-align:center;">
-          <tr><th>Text</th></tr>
-          <tr><td>Excel2023</td></tr>
-        </table>
-        <p><b>Formula:</b><br>
-        =REPLACE(A2,6,4,"2025") → Excel2025 ✅<br>
-        =SUBSTITUTE(A2,"2023","2024") → Excel2024 ✅</p>
+      <!-- Windows -->
+      <div class="task-card" style="--color:#605e5c; padding:30px; min-height:460px;">
+        <h3>Task 5: Windows</h3>
+        <p><strong>Steps:</strong><br>
+        Create a new folder and organize documents.</p>
+
+        <p><strong>Question:</strong><br>
+        Which shortcut quickly creates a new folder in Windows?</p>
+        <ul>
+          <li>A) Ctrl + N</li>
+          <li>B) Ctrl + Shift + N</li>
+          <li>C) Alt + Tab</li>
+          <li>D) Ctrl + C</li>
+        </ul>
+
+        <div class="explanation" style="background:#f6f6f8; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4>Answer & Explanation</h4>
+          <p><strong>Correct:</strong> B) Ctrl + Shift + N.</p>
+          <p>Explanation: This shortcut creates a new folder instantly without using the mouse.</p>
+        </div>
       </div>
 
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #00796b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#00796b; font-size:20px; margin-bottom:8px;">6. TEXTJOIN</h3>
-        <p>➡️ Combine multiple cells with a delimiter.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>First</th><th>Last</th><th>City</th></tr>
-          <tr><td>Omar</td><td>Ali</td><td>Cairo</td></tr>
-        </table>
-        <p><b>Formula:</b> =TEXTJOIN(", ", TRUE, A2:C2)<br>
-        <b>Result:</b> Omar, Ali, Cairo ✅</p>
-      </div>
+      <!-- IT -->
+      <div class="task-card" style="--color:#107c10; padding:30px; min-height:460px;">
+        <h3>Task 6: IT & Internet</h3>
+        <p><strong>Steps:</strong><br>
+        Open a browser, search for information, and bookmark the page.</p>
 
-      <!-- Card 7 -->
-      <div style="background:#fff; border-left:6px solid #d32f2f; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.12);">
-        <h3 style="color:#d32f2f; font-size:20px; margin-bottom:8px;">7. FILTER</h3>
-        <p>➡️ Extract sales above 3000.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
-          <tr><th>Sales</th></tr>
-          <tr><td>2500</td></tr>
-          <tr><td>4000</td></tr>
-          <tr><td>5000</td></tr>
-        </table>
-        <p><b>Formula:</b> =FILTER(A2:A4, A2:A4>3000)<br>
-        <b>Result:</b> {4000; 5000} ✅</p>
+        <p><strong>Question:</strong><br>
+        What is the main purpose of bookmarking a page?</p>
+        <ul>
+          <li>A) To change the website design</li>
+          <li>B) To block ads</li>
+          <li>C) To save the page for quick access later</li>
+          <li>D) To download the website</li>
+        </ul>
+
+        <div class="explanation" style="background:#f0fff4; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4>Answer & Explanation</h4>
+          <p><strong>Correct:</strong> C) To save the page for quick access later.</p>
+          <p>Explanation: Bookmarking lets you store frequently used sites and open them easily without searching again.</p>
+        </div>
       </div>
 
     </div>
   </div>
-</div><br>
+</div>
 
-<b style="font-size: 17px; color:#d84315;">Tip:</b> 
-<span style="color:#333;">Use these text and data functions to clean messy data and extract exactly what you need 🔍✅.</span>`,
-
-  "q": "If you want to extract all sales above 3000, which Excel function should you use?",
-  "a": "g",
-  "options": [
-    "LEFT",
-    "MID",
-    "SEARCH",
-    "SUBSTITUTE",
-    "TEXTJOIN",
-    "LEN",
-    "FILTER"
-  ]
-},
-
-
-{
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fafafa; color: #333; padding: 25px; border: 2px solid #ddd; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-    
-    <strong style="font-size: 24px; color: #1b5e20;">💻 Logical <span style="color:#2e7d32;">Excel Functions</span> with Data Examples</strong><br><br>
-    
-    <em><u style="color:#2e7d32;">Why this matters:</u></em><br>
-    Logical functions help automate decisions inside Excel by evaluating conditions. ✅<br><br>
-
-    <strong style="font-size: 20px; color:#004080;">📘 Practical Logical Functions:</strong><br><br>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #2e7d32; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
-        <h3 style="color:#2e7d32; font-size:20px; margin-bottom:8px;">1. IF</h3>
-        <p>➡️ Check if student passed (≥ 50).</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
-          <tr><th>Name</th><th>Score</th></tr>
-          <tr><td>Ali</td><td>72</td></tr>
-          <tr><td>Sara</td><td>45</td></tr>
-        </table>
-        <p><b>Formula:</b> =IF(B2>=50,"Pass","Fail")<br>
-        <b>Result:</b> Pass ✅</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #1565c0; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
-        <h3 style="color:#1565c0; font-size:20px; margin-bottom:8px;">2. AND</h3>
-        <p>➡️ Approve bonus if sales ≥ 5000 AND attendance ≥ 90%.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
-          <tr><th>Name</th><th>Sales</th><th>Attendance</th></tr>
-          <tr><td>Kareem</td><td>6000</td><td>95%</td></tr>
-          <tr><td>Mona</td><td>4000</td><td>92%</td></tr>
-        </table>
-        <p><b>Formula:</b> =IF(AND(B2>=5000,C2>=90%),"Bonus","No Bonus")<br>
-        <b>Result:</b> Bonus ✅</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #ef6c00; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
-        <h3 style="color:#ef6c00; font-size:20px; margin-bottom:8px;">3. OR</h3>
-        <p>➡️ Give discount if city = Cairo OR purchases ≥ 10.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:90%; text-align:center;">
-          <tr><th>Name</th><th>City</th><th>Purchases</th></tr>
-          <tr><td>Omar</td><td>Cairo</td><td>5</td></tr>
-          <tr><td>Heba</td><td>Alex</td><td>12</td></tr>
-        </table>
-        <p><b>Formula:</b> =IF(OR(B2="Cairo",C2>=10),"Discount","No Discount")<br>
-        <b>Result:</b> Discount ✅</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #6a1b9a; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
-        <h3 style="color:#6a1b9a; font-size:20px; margin-bottom:8px;">4. NOT</h3>
-        <p>➡️ Flag absent employees (NOT Present).</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:70%; text-align:center;">
-          <tr><th>Name</th><th>Status</th></tr>
-          <tr><td>Yasser</td><td>Present</td></tr>
-          <tr><td>Nada</td><td>Absent</td></tr>
-        </table>
-        <p><b>Formula:</b> =IF(NOT(B2="Present"),"Flag","OK")<br>
-        <b>Result:</b> OK ✅</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #ad1457; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
-        <h3 style="color:#ad1457; font-size:20px; margin-bottom:8px;">5. IFS</h3>
-        <p>➡️ Grade students by score.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
-          <tr><th>Name</th><th>Score</th></tr>
-          <tr><td>Salma</td><td>85</td></tr>
-          <tr><td>Tarek</td><td>40</td></tr>
-        </table>
-        <p><b>Formula:</b> =IFS(B2>=90,"Excellent", B2>=50,"Pass", TRUE,"Fail")<br>
-        <b>Result:</b> Pass ✅</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #00897b; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
-        <h3 style="color:#00897b; font-size:20px; margin-bottom:8px;">6. SWITCH</h3>
-        <p>➡️ Convert numbers to weekdays.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:50%; text-align:center;">
-          <tr><th>Number</th></tr>
-          <tr><td>3</td></tr>
-        </table>
-        <p><b>Formula:</b> =SWITCH(A2,1,"Sunday",2,"Monday",3,"Tuesday",4,"Wednesday")<br>
-        <b>Result:</b> Tuesday ✅</p>
-      </div>
-
-      <!-- Card 7 -->
-      <div style="background:#fff; border-left:6px solid #c62828; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
-        <h3 style="color:#c62828; font-size:20px; margin-bottom:8px;">7. XOR</h3>
-        <p>➡️ Check if only one condition is true (not both).</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:80%; text-align:center;">
-          <tr><th>Condition A</th><th>Condition B</th></tr>
-          <tr><td>TRUE</td><td>FALSE</td></tr>
-          <tr><td>TRUE</td><td>TRUE</td></tr>
-        </table>
-        <p><b>Formula:</b> =XOR(A2,B2)<br>
-        <b>Result:</b> TRUE ✅</p>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#e53935;">Tip:</b> 
-<span style="color:#333;">Logical functions allow you to design smart sheets that react automatically to different scenarios 🤖✅.</span>`,
-
-  "q": "Which function should you use if you want to apply multiple conditions and all must be TRUE?",
+<style>
+.task-card {
+  background:#ffffff; 
+  border-left:8px solid var(--color); 
+  border-radius:16px; 
+  padding:22px; 
+  box-shadow:0 8px 26px rgba(0,0,0,0.07);
+  transition: transform 0.28s, box-shadow 0.28s;
+  position: relative;
+  overflow: visible;
+}
+.task-card h3 {
+  color: var(--color);
+  font-size:22px;
+  margin-bottom:12px;
+}
+.task-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.18);
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin:8px 0 12px 0;
+}
+ul li {
+  margin-bottom: 8px;
+  padding-left: 8px;
+}
+.explanation h4 { font-size:16px; color:#0b3b66; }
+table, th, td {
+  border:1px solid #d6e6ff;
+}
+th {
+  background:#f5fbff;
+}
+</style>`,
+  "q": "Which sequence of tasks is suitable for intermediate IT learners?",
   "a": "b",
   "options": [
-    "OR",
-    "AND",
-    "NOT",
-    "SWITCH"
+    "Do tasks randomly without order",
+    "Word (report) → Excel (grades) → Access (student database) → PowerPoint (presentation) → Windows (folders) → Internet (bookmarks)",
+    "Just open apps without practicing",
+    "Turn off the computer immediately"
+  ]
+},
+
+
+
+
+
+
+{
+  "passage": `<div style="margin-top: 40px; max-width: 1100px; margin-left:auto; margin-right:auto; position: relative;">
+
+  <!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 64px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧑‍💻</div>
+
+  <!-- Main Container -->
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #f7fbff, #ffffff); color: #222; padding: 34px; border: 1px solid #dfefff; border-radius: 22px; font-size: 18px; line-height:1.7; box-shadow: 0 10px 28px rgba(0,0,0,0.08); position: relative; z-index: 5;">
+    
+    <strong style="font-size: 28px; color: #003b70; display:block; margin-bottom:18px;">
+      ⚡ Professional Advanced Tasks: Integrated IT Skills
+    </strong>
+    
+    <p style="margin-bottom:20px; color:#214b77;">
+      <em><u style="color:#0056b3;">Advanced Challenge (Each card):</u></em><br>
+      Each card now includes: Steps, a multiple-choice question (A–D), the correct answer with a detailed explanation, a practical example, and a small training table. Cards are enlarged to fit the content.
+    </p>
+
+    <!-- Cards Grid (larger cards) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; align-items: start;">
+
+      <!-- Word -->
+      <div class="task-card" style="--color:#0078d7; padding:30px; min-height:520px;">
+        <h3>Task 1: Microsoft Word</h3>
+        <p><strong>Steps:</strong><br>
+        Create a thesis with sections, cross-references, footnotes, and bibliography.</p>
+
+        <p><strong>Question:</strong><br>
+        Which feature lets you add citations and automatically build a bibliography?</p>
+        <ul>
+          <li>A) Track Changes</li>
+          <li>B) Cross-reference</li>
+          <li>C) Footnotes</li>
+          <li>D) References → Manage Sources</li>
+        </ul>
+
+        <div class="explanation" style="background:#f0f6ff; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4 style="margin:0 0 8px 0;">Answer & Explanation</h4>
+          <p style="margin:0 0 8px 0;"><strong>Correct:</strong> D) References → Manage Sources.</p>
+          <p style="margin:0 0 8px 0;">
+            Explanation: Use the References tab → "Manage Sources" / "Insert Citation" to add structured bibliographic entries (Book, Article, etc.). Word stores the sources and can automatically generate a bibliography in styles like APA or MLA. Footnotes are for in-page notes, cross-references link to figures/sections, and Track Changes is for editing history.
+          </p>
+
+          <p style="margin:0 0 8px 0;"><strong>Practical example (step-by-step):</strong></p>
+          <ol style="margin:0 0 8px 18px;">
+            <li>Open References → Click "Insert Citation" → "Add New Source".</li>
+            <li>Choose Type: Book → fill Author, Title, Year → OK.</li>
+            <li>Place cursor where citation should appear → References → Insert Citation → select the source.</li>
+            <li>When ready, put cursor at end → References → Bibliography → choose APA style.</li>
+          </ol>
+
+          <p style="margin:0 0 8px 0;"><strong>Training table:</strong></p>
+          <table border="1" style="border-collapse:collapse; width:100%; text-align:left; font-size:14px;">
+            <tr style="background:#eaf4ff;"><th style="padding:6px;">Action</th><th style="padding:6px;">Location</th><th style="padding:6px;">Example</th></tr>
+            <tr><td style="padding:6px;">Add source</td><td style="padding:6px;">References → Add New Source</td><td style="padding:6px;">Book: "Web Dev Basics", 2020</td></tr>
+            <tr><td style="padding:6px;">Insert citation</td><td style="padding:6px;">References → Insert Citation</td><td style="padding:6px;">(Smith, 2020)</td></tr>
+            <tr><td style="padding:6px;">Generate bibliography</td><td style="padding:6px;">References → Bibliography</td><td style="padding:6px;">APA formatted list</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Excel -->
+      <div class="task-card" style="--color:#00b294; padding:30px; min-height:520px;">
+        <h3>Task 2: Microsoft Excel</h3>
+        <p><strong>Steps:</strong><br>
+        Summarize sales data with PivotTables, slicers and dashboards.</p>
+
+        <p><strong>Question:</strong><br>
+        Which Excel feature is best to filter data interactively in a PivotTable?</p>
+        <ul>
+          <li>A) Data Validation</li>
+          <li>B) Slicer</li>
+          <li>C) Conditional Formatting</li>
+          <li>D) Find & Replace</li>
+        </ul>
+
+        <div class="explanation" style="background:#f0fff4; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4 style="margin:0 0 8px 0;">Answer & Explanation</h4>
+          <p style="margin:0 0 8px 0;"><strong>Correct:</strong> B) Slicer.</p>
+          <p style="margin:0 0 8px 0;">
+            Explanation: Slicers provide a visual, clickable way to filter PivotTable data by fields (e.g., Region, Product). They are more user-friendly than manual filters and work well in dashboards.
+          </p>
+
+          <p style="margin:0 0 8px 0;"><strong>Practical example (step-by-step):</strong></p>
+          <ol style="margin:0 0 8px 18px;">
+            <li>Select the data range → Insert → PivotTable → create PivotTable.</li>
+            <li>Add fields (Rows: Product, Values: Sum of Sales).</li>
+            <li>With PivotTable selected → Insert → Slicer → choose "Region".</li>
+            <li>Click the slicer buttons to filter the PivotTable and charts instantly.</li>
+          </ol>
+
+          <p style="margin:0 0 8px 0;"><strong>Sample data:</strong></p>
+          <pre style="background:#fff; padding:8px; border-radius:6px; overflow:auto; font-size:13px;">Date,Product,Region,Sales
+2025-09-01,Laptop,North,5000
+2025-09-01,Printer,South,2000
+2025-09-02,Scanner,East,1500</pre>
+
+          <p style="margin:0 0 8px 0;"><strong>Training table:</strong></p>
+          <table border="1" style="border-collapse:collapse; width:100%; text-align:left; font-size:14px;">
+            <tr style="background:#f0fff7;"><th style="padding:6px;">Action</th><th style="padding:6px;">Location</th><th style="padding:6px;">Result</th></tr>
+            <tr><td style="padding:6px;">Create PivotTable</td><td style="padding:6px;">Insert → PivotTable</td><td style="padding:6px;">Aggregated sales by product</td></tr>
+            <tr><td style="padding:6px;">Add Slicer</td><td style="padding:6px;">Insert → Slicer</td><td style="padding:6px;">Interactive Region filter</td></tr>
+            <tr><td style="padding:6px;">Insert Chart</td><td style="padding:6px;">PivotChart</td><td style="padding:6px;">Visual KPI for dashboard</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Access -->
+      <div class="task-card" style="--color:#e81123; padding:30px; min-height:520px;">
+        <h3>Task 3: Microsoft Access</h3>
+        <p><strong>Steps:</strong><br>
+        Create tables, set relationships and generate reports for staff data.</p>
+
+        <p><strong>Question:</strong><br>
+        What is the main purpose of setting a primary key in a table?</p>
+        <ul>
+          <li>A) To sort records automatically</li>
+          <li>B) To uniquely identify each record</li>
+          <li>C) To speed up queries only</li>
+          <li>D) To create a form design</li>
+        </ul>
+
+        <div class="explanation" style="background:#fff5f5; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4 style="margin:0 0 8px 0;">Answer & Explanation</h4>
+          <p style="margin:0 0 8px 0;"><strong>Correct:</strong> B) To uniquely identify each record.</p>
+          <p style="margin:0 0 8px 0;">
+            Explanation: A primary key ensures each row is unique (no duplicates) and is used to create relationships between tables (one-to-many). It also helps indexing and data integrity.
+          </p>
+
+          <p style="margin:0 0 8px 0;"><strong>Practical example (step-by-step):</strong></p>
+          <ol style="margin:0 0 8px 18px;">
+            <li>Create table "Employees" with fields: EmployeeID (AutoNumber), Name (Text), DeptID (Number).</li>
+            <li>Set EmployeeID as Primary Key (right-click field → Primary Key).</li>
+            <li>Create table "Departments" with DeptID (Primary Key) and DeptName.</li>
+            <li>Design relationship: Employees.DeptID → Departments.DeptID.</li>
+          </ol>
+
+          <p style="margin:0 0 8px 0;"><strong>Training table:</strong></p>
+          <table border="1" style="border-collapse:collapse; width:100%; text-align:left; font-size:14px;">
+            <tr style="background:#ffecec;"><th style="padding:6px;">Field</th><th style="padding:6px;">Type</th><th style="padding:6px;">Example</th></tr>
+            <tr><td style="padding:6px;">EmployeeID</td><td style="padding:6px;">AutoNumber (PK)</td><td style="padding:6px;">1001</td></tr>
+            <tr><td style="padding:6px;">Name</td><td style="padding:6px;">Short Text</td><td style="padding:6px;">Ahmed Ali</td></tr>
+            <tr><td style="padding:6px;">DeptID</td><td style="padding:6px;">Number (FK)</td><td style="padding:6px;">10</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- PowerPoint -->
+      <div class="task-card" style="--color:#ffb900; padding:30px; min-height:520px;">
+        <h3>Task 4: PowerPoint</h3>
+        <p><strong>Steps:</strong><br>
+        Build an interactive pitch deck with transitions, hyperlinks and embedded media.</p>
+
+        <p><strong>Question:</strong><br>
+        Which action makes a slide element link to another slide?</p>
+        <ul>
+          <li>A) Animation</li>
+          <li>B) Transition</li>
+          <li>C) Hyperlink</li>
+          <li>D) Theme</li>
+        </ul>
+
+        <div class="explanation" style="background:#fffaf0; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4 style="margin:0 0 8px 0;">Answer & Explanation</h4>
+          <p style="margin:0 0 8px 0;"><strong>Correct:</strong> C) Hyperlink.</p>
+          <p style="margin:0 0 8px 0;">
+            Explanation: Use Insert → Link / Hyperlink (or right-click → Link) and choose "Place in This Document" to point to a specific slide. Animations and transitions are visual effects, while theme changes the design.
+          </p>
+
+          <p style="margin:0 0 8px 0;"><strong>Practical example (step-by-step):</strong></p>
+          <ol style="margin:0 0 8px 18px;">
+            <li>Create two slides: Slide 1 (Menu), Slide 5 (Details).</li>
+            <li>On Slide 1, add text "Go to Details" → select text → Insert → Link → Place in This Document → Slide 5 → OK.</li>
+            <li>In Slide Show mode, clicking the text navigates to Slide 5.</li>
+          </ol>
+
+          <p style="margin:0 0 8px 0;"><strong>Training table:</strong></p>
+          <table border="1" style="border-collapse:collapse; width:100%; text-align:left; font-size:14px;">
+            <tr style="background:#fff8e6;"><th style="padding:6px;">Element</th><th style="padding:6px;">Action</th><th style="padding:6px;">Result</th></tr>
+            <tr><td style="padding:6px;">Button/Text</td><td style="padding:6px;">Insert → Link → Place in This Document</td><td style="padding:6px;">Jump to specific slide</td></tr>
+            <tr><td style="padding:6px;">Video</td><td style="padding:6px;">Insert → Video → Embed</td><td style="padding:6px;">Play within slide</td></tr>
+            <tr><td style="padding:6px;">Transition</td><td style="padding:6px;">Animations/Transitions tab</td><td style="padding:6px;">Slide movement effects</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Windows -->
+      <div class="task-card" style="--color:#605e5c; padding:30px; min-height:520px;">
+        <h3>Task 5: Windows</h3>
+        <p><strong>Steps:</strong><br>
+        Manage users, create backup folders and schedule automated backups.</p>
+
+        <p><strong>Question:</strong><br>
+        Which Windows tool is used to run a daily backup at 8 PM?</p>
+        <ul>
+          <li>A) Device Manager</li>
+          <li>B) Task Scheduler</li>
+          <li>C) Event Viewer</li>
+          <li>D) Control Panel → Power Options</li>
+        </ul>
+
+        <div class="explanation" style="background:#f6f6f8; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4 style="margin:0 0 8px 0;">Answer & Explanation</h4>
+          <p style="margin:0 0 8px 0;"><strong>Correct:</strong> B) Task Scheduler.</p>
+          <p style="margin:0 0 8px 0;">
+            Explanation: Task Scheduler allows creating tasks triggered at specific times (daily, weekly) to run programs or scripts (e.g., backup commands). Device Manager manages drivers, Event Viewer shows logs, and Power Options manages power settings.
+          </p>
+
+          <p style="margin:0 0 8px 0;"><strong>Practical example (step-by-step):</strong></p>
+          <ol style="margin:0 0 8px 18px;">
+            <li>Create backup folder: C:\Backup\Documents.</li>
+            <li>Create a small backup script using Robocopy (save as backup.bat):</li>
+            <pre style="background:#fff; padding:8px; border-radius:6px; overflow:auto; font-size:13px;">robocopy "C:\Users\Me\Documents" "C:\Backup\Documents" /MIR /XO</pre>
+            <li>Open Task Scheduler → Create Basic Task → Name: DailyBackup → Trigger: Daily 8:00 PM → Action: Start a program → program: backup.bat → Finish.</li>
+          </ol>
+
+          <p style="margin:0 0 8px 0;"><strong>Training table:</strong></p>
+          <table border="1" style="border-collapse:collapse; width:100%; text-align:left; font-size:14px;">
+            <tr style="background:#f0f0f2;"><th style="padding:6px;">Setting</th><th style="padding:6px;">Location</th><th style="padding:6px;">Example</th></tr>
+            <tr><td style="padding:6px;">Backup script</td><td style="padding:6px;">C:\Scripts\backup.bat</td><td style="padding:6px;">robocopy command</td></tr>
+            <tr><td style="padding:6px;">Scheduler trigger</td><td style="padding:6px;">Task Scheduler</td><td style="padding:6px;">Daily @ 20:00</td></tr>
+            <tr><td style="padding:6px;">Action</td><td style="padding:6px;">Start a program</td><td style="padding:6px;">backup.bat</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- IT -->
+      <div class="task-card" style="--color:#107c10; padding:30px; min-height:520px;">
+        <h3>Task 6: IT & Internet</h3>
+        <p><strong>Steps:</strong><br>
+        Configure VPN, browser security extensions and test secure connections.</p>
+
+        <p><strong>Question:</strong><br>
+        Why is a VPN important for remote employees?</p>
+        <ul>
+          <li>A) To increase internet speed</li>
+          <li>B) To block pop-ups</li>
+          <li>C) To encrypt traffic and secure data</li>
+          <li>D) To install software remotely</li>
+        </ul>
+
+        <div class="explanation" style="background:#f0fff4; padding:14px; border-radius:10px; margin-top:12px; border-left:6px solid var(--color);">
+          <h4 style="margin:0 0 8px 0;">Answer & Explanation</h4>
+          <p style="margin:0 0 8px 0;"><strong>Correct:</strong> C) To encrypt traffic and secure data.</p>
+          <p style="margin:0 0 8px 0;">
+            Explanation: A VPN creates an encrypted tunnel between the user's device and the company network, protecting data from eavesdropping especially on public networks. It does not inherently increase speed or block pop-ups.
+          </p>
+
+          <p style="margin:0 0 8px 0;"><strong>Practical example (step-by-step):</strong></p>
+          <ol style="margin:0 0 8px 18px;">
+            <li>Install the company VPN client (e.g., OpenVPN, Cisco AnyConnect).</li>
+            <li>Open client → Enter company VPN credentials → Connect.</li>
+            <li>Verify connection: visit <code>https://whatismyip.com</code> (shows company exit IP) and access internal site (e.g., intranet.company.local).</li>
+          </ol>
+
+          <p style="margin:0 0 8px 0;"><strong>Training table:</strong></p>
+          <table border="1" style="border-collapse:collapse; width:100%; text-align:left; font-size:14px;">
+            <tr style="background:#eaffef;"><th style="padding:6px;">Tool</th><th style="padding:6px;">Purpose</th><th style="padding:6px;">Example</th></tr>
+            <tr><td style="padding:6px;">VPN client</td><td style="padding:6px;">Encrypt & access internal network</td><td style="padding:6px;">Cisco AnyConnect</td></tr>
+            <tr><td style="padding:6px;">Browser extension</td><td style="padding:6px;">Block trackers/ads</td><td style="padding:6px;">uBlock Origin</td></tr>
+            <tr><td style="padding:6px;">HTTPS check</td><td style="padding:6px;">Ensure secure connection</td><td style="padding:6px;">Lock icon in address bar</td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.task-card {
+  background:#ffffff; 
+  border-left:8px solid var(--color); 
+  border-radius:16px; 
+  padding:22px; 
+  box-shadow:0 8px 26px rgba(0,0,0,0.07);
+  transition: transform 0.28s, box-shadow 0.28s;
+  position: relative;
+  overflow: visible;
+}
+.task-card h3 {
+  color: var(--color);
+  font-size:22px;
+  margin-bottom:12px;
+}
+.task-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.18);
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin:8px 0 12px 0;
+}
+ul li {
+  margin-bottom: 8px;
+  padding-left: 8px;
+}
+.explanation h4 { font-size:16px; color:#0b3b66; }
+table, th, td {
+  border:1px solid #d6e6ff;
+}
+th {
+  background:#f5fbff;
+}
+</style>`,
+  "q": "Which advanced sequence of IT tasks demonstrates an integrated professional workflow?",
+  "a": "b",
+  "options": [
+    "Do random tasks in separate tools without relation",
+    "Word (report) → Excel (dashboard) → Access (database) → PowerPoint (presentation) → Windows (automation) → IT & Internet (security)",
+    "Only open apps without doing anything advanced",
+    "Shut down the computer without saving"
+  ]
+},
+
+
+
+
+
+
+
+   {
+  "passage": `<div style="margin-top: 60px; max-width: 1000px; margin-left:auto; margin-right:auto; position: relative;">
+
+  <!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 60px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧐</div>
+
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #f4f8ff, #ffffff); color: #333; padding: 30px; border: 1px solid #d0e2ff; border-radius: 20px; font-size: 18px; box-shadow: 0 6px 14px rgba(0,0,0,0.08); position: relative; z-index: 5;">
+    
+    <strong style="font-size: 26px; color: #004080; display:block; margin-bottom:15px;">
+      ⚡ Professional Task: Create a <span style="color:#0078d7;">Formal Report</span> in Microsoft Word
+    </strong>
+    
+    <p style="line-height:1.6; margin-bottom:25px;">
+      <em><u style="color:#0056b3;">Why this matters:</u></em><br>
+      Building a structured, well-formatted report in Word is a core professional skill. It helps you present information clearly, maintain consistency, and deliver documents that look polished and credible 📑.
+    </p>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Task Instructions:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
+
+      <!-- Cards -->
+      <div class="task-card" style="--color:#0078d7;">
+        <h3>Step 1</h3>
+        <p>➡️ Open <strong>Microsoft Word</strong> and create a new Blank Document.</p>
+      </div>
+      <div class="task-card" style="--color:#00b294;">
+        <h3>Step 2</h3>
+        <p>➡️ Insert a <strong>cover page</strong> with the title: “Annual Performance Report 2025”.</p>
+      </div>
+      <div class="task-card" style="--color:#e81123;">
+        <h3>Step 3</h3>
+        <p>➡️ Use <strong>Headings (H1, H2)</strong> to structure sections: Introduction, Analysis, Recommendations.</p>
+      </div>
+      <div class="task-card" style="--color:#ffb900;">
+        <h3>Step 4</h3>
+        <p>➡️ Insert a <strong>table</strong> (Employee – Department – Achievements) with professional styling.</p>
+      </div>
+      <div class="task-card" style="--color:#605e5c;">
+        <h3>Step 5</h3>
+        <p>➡️ Add a <strong>chart</strong> or SmartArt to visualize key data (e.g., performance growth).</p>
+      </div>
+      <div class="task-card" style="--color:#107c10;">
+        <h3>Step 6</h3>
+        <p>➡️ Insert a <strong>Table of Contents</strong> (References → Table of Contents), then save as PDF.</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">Delivering a professional report requires consistent formatting, use of Word features (Headings, Styles, Charts), and proper exporting ⚠️.</span>
+
+<style>
+.task-card {
+  background:#ffffff; 
+  border-left:6px solid var(--color); 
+  border-radius:14px; 
+  padding:22px; 
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.task-card h3 {
+  color: var(--color);
+  font-size:20px;
+  margin-bottom:10px;
+}
+.task-card:hover {
+  transform: translateY(-12px) scale(1.07);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+</style>`,
+  "q": "Which sequence of steps best represents creating a professional report in Word?",
+  "a": "b",
+  "options": [
+    "Open Word and type everything without formatting or saving",
+    "Open Word → Add cover page → Use Headings and Table → Insert charts → Generate Table of Contents → Save as PDF",
+    "Only insert pictures without structuring content",
+    "Use Task Manager to end Word process"
   ]
 },
 
@@ -728,132 +876,893 @@ input[type="radio"] {
 
 
 {
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #fefefe; color: #333; padding: 25px; border: 2px solid #ddd; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-    
-    <strong style="font-size: 24px; color: #002b5c;">💻 Advanced <span style="color:#0078d7;">Excel Functions with Rich Examples</span></strong><br><br>
-    
-    <em><u style="color:#0056b3;">Why this matters:</u></em><br>
-    Using real-world datasets with advanced formulas helps learners unlock Excel’s full analytical power. 🚀<br><br>
+  "passage": `<div style="margin-top: 60px; max-width: 1000px; margin-left:auto; margin-right:auto;">
 
-    <strong style="font-size: 20px; color:#004080;">📘 Functions with Extended Practical Examples:</strong><br><br>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
+<!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 60px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧐</div>
+
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #f9fff4, #ffffff); color: #333; padding: 30px; border: 1px solid #c6e8c4; border-radius: 20px; font-size: 18px; box-shadow: 0 6px 14px rgba(0,0,0,0.08);">
+    
+    <strong style="font-size: 26px; color: #107c10; display:block; margin-bottom:15px;">
+      📊 Professional Skill: Master <span style="color:#2e8b57;">Microsoft Excel</span> Data Management
+    </strong>
+    
+    <p style="line-height:1.6; margin-bottom:25px;">
+      <em><u style="color:#107c10;">Why this matters:</u></em><br>
+      Excel is the backbone of data analysis and reporting in professional environments.  
+      Knowing how to create tables, use formulas, and apply formatting ensures accuracy, efficiency, and smarter decisions ✅.
+    </p>
+
+    <strong style="font-size: 20px; color:#107c10;">⚙️ Core Steps to Work with Excel:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
       
       <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #ff5722; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
-        <h3 style="color:#ff5722; font-size:20px; margin-bottom:8px;">1. HLOOKUP</h3>
-        <p>➡️ Get Q2 sales for Product B.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th></th><th>Q1</th><th>Q2</th><th>Q3</th></tr>
-          <tr><td>Product A</td><td>2000</td><td>2500</td><td>3000</td></tr>
-          <tr><td>Product B</td><td>1500</td><td>1800</td><td>2100</td></tr>
-        </table>
-        <p><b>Formula:</b> =HLOOKUP("Q2", B1:D3, 3, FALSE)<br>
-        <b>Result:</b> 1800 ✅</p>
+      <div style="background:#ffffff; border-left:6px solid #107c10; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:10px;">Step 1</h3>
+        <p>➡️ Open <strong>Microsoft Excel</strong> and create a <em>Blank Workbook</em>.</p>
       </div>
 
       <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #2196f3; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
-        <h3 style="color:#2196f3; font-size:20px; margin-bottom:8px;">2. XLOOKUP</h3>
-        <p>➡️ Find city for customer ID 205.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>ID</th><th>Name</th><th>City</th></tr>
-          <tr><td>201</td><td>Omar</td><td>Cairo</td></tr>
-          <tr><td>205</td><td>Nada</td><td>Alexandria</td></tr>
-          <tr><td>210</td><td>Hossam</td><td>Tanta</td></tr>
+      <div style="background:#ffffff; border-left:6px solid #2b579a; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#2b579a; font-size:20px; margin-bottom:10px;">Step 2</h3>
+        <p>➡️ Insert a <strong>Table</strong> for structured data entry (e.g., Students & Scores).</p>
+        
+        <table border="1" style="border-collapse:collapse; width:100%; margin-top:10px; text-align:center;">
+          <tr style="background:#e6f2ff;">
+            <th>Student</th>
+            <th>Math</th>
+            <th>English</th>
+            <th>Science</th>
+          </tr>
+          <tr>
+            <td>Ali</td>
+            <td>85</td>
+            <td>90</td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Salma</td>
+            <td>92</td>
+            <td>88</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>Kareem</td>
+            <td>70</td>
+            <td>75</td>
+            <td>80</td>
+          </tr>
         </table>
-        <p><b>Formula:</b> =XLOOKUP(205, A2:A4, C2:C4)<br>
-        <b>Result:</b> Alexandria ✅</p>
       </div>
 
       <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #4caf50; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
-        <h3 style="color:#4caf50; font-size:20px; margin-bottom:8px;">3. COUNTIFS</h3>
-        <p>➡️ Count orders from 2024 in Cairo.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>City</th><th>Year</th><th>Order</th></tr>
-          <tr><td>Cairo</td><td>2024</td><td>15</td></tr>
-          <tr><td>Alex</td><td>2023</td><td>10</td></tr>
-          <tr><td>Cairo</td><td>2024</td><td>20</td></tr>
-          <tr><td>Tanta</td><td>2024</td><td>5</td></tr>
-        </table>
-        <p><b>Formula:</b> =COUNTIFS(A2:A5,"Cairo", B2:B5,2024)<br>
-        <b>Result:</b> 2 ✅</p>
+      <div style="background:#ffffff; border-left:6px solid #ffb900; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:10px;">Step 3</h3>
+        <p>➡️ Apply <strong>Basic Functions</strong> to calculate values:</p>
+        <ul style="margin-left:20px; line-height:1.6;">
+          <li><code>=SUM(B2:D2)</code> → Total score</li>
+          <li><code>=AVERAGE(B2:D2)</code> → Average score</li>
+          <li><code>=MAX(B2:D4)</code> → Highest mark</li>
+          <li><code>=MIN(B2:D4)</code> → Lowest mark</li>
+        </ul>
       </div>
 
       <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #9c27b0; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
-        <h3 style="color:#9c27b0; font-size:20px; margin-bottom:8px;">4. AVERAGEIFS</h3>
-        <p>➡️ Average sales in 2024 only.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>Year</th><th>Sales</th></tr>
-          <tr><td>2024</td><td>5000</td></tr>
-          <tr><td>2024</td><td>7000</td></tr>
-          <tr><td>2023</td><td>4000</td></tr>
-        </table>
-        <p><b>Formula:</b> =AVERAGEIFS(B2:B4, A2:A4,2024)<br>
-        <b>Result:</b> 6000 ✅</p>
+      <div style="background:#ffffff; border-left:6px solid #e81123; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:10px;">Step 4</h3>
+        <p>➡️ Use <strong>Conditional Formatting</strong> to highlight top scores or low performers automatically.</p>
       </div>
 
       <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #795548; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
-        <h3 style="color:#795548; font-size:20px; margin-bottom:8px;">5. CONCAT</h3>
-        <p>➡️ Join first and last names.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>First</th><th>Last</th></tr>
-          <tr><td>Ali</td><td>Hassan</td></tr>
-          <tr><td>Sara</td><td>Mostafa</td></tr>
-        </table>
-        <p><b>Formula:</b> =CONCAT(A2," ",B2)<br>
-        <b>Result:</b> Ali Hassan ✅</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #ff9800; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
-        <h3 style="color:#ff9800; font-size:20px; margin-bottom:8px;">6. PROPER, UPPER, LOWER</h3>
-        <p>➡️ Format text for consistency.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:50%; text-align:center;">
-          <tr><th>Name</th></tr>
-          <tr><td>aLI hASSAN</td></tr>
-        </table>
-        <p><b>Formula:</b><br>
-        =PROPER(A2) → Ali Hassan ✅<br>
-        =UPPER(A2) → ALI HASSAN ✅<br>
-        =LOWER(A2) → ali hassan ✅</p>
-      </div>
-
-      <!-- Card 7 -->
-      <div style="background:#fff; border-left:6px solid #3f51b5; border-radius:12px; padding:20px; box-shadow:0 6px 14px rgba(0,0,0,0.1);">
-        <h3 style="color:#3f51b5; font-size:20px; margin-bottom:8px;">7. UNIQUE + SORT</h3>
-        <p>➡️ Extract unique cities sorted alphabetically.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:60%; text-align:center;">
-          <tr><th>City</th></tr>
-          <tr><td>Cairo</td></tr>
-          <tr><td>Alex</td></tr>
-          <tr><td>Cairo</td></tr>
-          <tr><td>Tanta</td></tr>
-        </table>
-        <p><b>Formula:</b> =SORT(UNIQUE(A2:A5))<br>
-        <b>Result:</b> Alex, Cairo, Tanta ✅</p>
+      <div style="background:#ffffff; border-left:6px solid #0078d7; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:10px;">Step 5</h3>
+        <p>➡️ Save your file as <strong>.xlsx</strong> or export as <strong>.pdf</strong> for sharing.</p>
       </div>
 
     </div>
   </div>
 </div><br>
 
-<b style="font-size: 17px; color:#e60000;">Tip:</b> 
-<span style="color:#333;">Practice by copying the tables above into Excel and testing the formulas. Try changing values to see how results update dynamically. 🔄✅</span>`,
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">Mastering Excel also means learning advanced functions (IF, VLOOKUP, PivotTables) for deeper analysis ⚡.</span>`,
 
-  "q": "If you want to find the average sales in 2024 only, which Excel function should you use?",
-  "a": "d",
+  "q": "Which of the following correctly shows the use of basic Excel functions on student scores?",
+  "a": "b",
   "options": [
-    "COUNTIFS",
-    "XLOOKUP",
-    "HLOOKUP",
-    "AVERAGEIFS"
+    "Type random text in cells without formulas",
+    "Use SUM, AVERAGE, MAX, and MIN on score columns to calculate totals, averages, and highest/lowest values",
+    "Open Task Manager to close Excel",
+    "Only format cells without entering formulas"
   ]
 },
+
+
+{
+  "passage": `<div style="margin-top: 60px; max-width: 1000px; margin-left:auto; margin-right:auto;">
+
+
+<!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 60px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧐</div>
+
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #fffaf4, #ffffff); color: #333; padding: 30px; border: 1px solid #ffd9b3; border-radius: 20px; font-size: 18px; box-shadow: 0 6px 14px rgba(0,0,0,0.08);">
+    
+    <strong style="font-size: 26px; color: #d83b01; display:block; margin-bottom:15px;">
+      🎨 Professional Skill: Master <span style="color:#ff5722;">Microsoft PowerPoint</span> Presentation Design
+    </strong>
+    
+    <p style="line-height:1.6; margin-bottom:25px;">
+      <em><u style="color:#d83b01;">Why this matters:</u></em><br>
+      PowerPoint is the leading tool for creating professional presentations.  
+      Knowing how to insert slides, use layouts, add visuals, and apply animations ensures impactful communication 🌟.
+    </p>
+
+    <strong style="font-size: 20px; color:#d83b01;">⚙️ Core Steps to Work with PowerPoint:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#ffffff; border-left:6px solid #d83b01; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#d83b01; font-size:20px; margin-bottom:10px;">Step 1</h3>
+        <p>➡️ Open <strong>Microsoft PowerPoint</strong> and select <em>Blank Presentation</em> or a ready-made template.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#ffffff; border-left:6px solid #ff9800; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#ff9800; font-size:20px; margin-bottom:10px;">Step 2</h3>
+        <p>➡️ Use the <strong>Design</strong> tab to choose a theme and adjust slide background.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#ffffff; border-left:6px solid #4caf50; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#4caf50; font-size:20px; margin-bottom:10px;">Step 3</h3>
+        <p>➡️ Insert <strong>Text Boxes, Images, Charts, and SmartArt</strong> to explain ideas visually.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#ffffff; border-left:6px solid #2196f3; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#2196f3; font-size:20px; margin-bottom:10px;">Step 4</h3>
+        <p>➡️ Use the <strong>Transitions</strong> tab to add smooth slide transitions.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#ffffff; border-left:6px solid #9c27b0; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#9c27b0; font-size:20px; margin-bottom:10px;">Step 5</h3>
+        <p>➡️ Apply <strong>Animations</strong> to highlight key points (avoid overuse 🚫).</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#ffffff; border-left:6px solid #795548; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#795548; font-size:20px; margin-bottom:10px;">Step 6</h3>
+        <p>➡️ Rehearse the slideshow using <strong>Slide Show → From Beginning</strong> and adjust timing.</p>
+      </div>
+
+    </div>
+
+    <br>
+    <div style="background:#fff3e0; border-left:6px solid #ff9800; border-radius:12px; padding:18px; margin-top:25px; font-size:16px;">
+      <b>💡 Exercise:</b><br>
+      Create a 5-slide presentation on <em>“My Future Career”</em>.  
+      - Slide 1: Title + Your Name  
+      - Slide 2: Introduction with text & image  
+      - Slide 3: Table showing skills & strengths  
+      - Slide 4: SmartArt diagram of goals  
+      - Slide 5: Summary with thank-you note  
+    </div>
+
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">A professional presentation combines clarity, visuals, and storytelling — not just text on slides ⚡.</span>`,
+
+  "q": "Which sequence of steps correctly creates a professional PowerPoint presentation?",
+  "a": "b",
+  "options": [
+    "Open Word and type paragraphs without design",
+    "Open PowerPoint → Choose template → Insert text, images, charts → Add transitions/animations → Rehearse slideshow",
+    "Only use Excel tables without any slides",
+    "Open Task Manager and end PowerPoint process"
+  ]
+},
+
+{
+  "passage": `<div style="margin-top: 60px; max-width: 1000px; margin-left:auto; margin-right:auto;">
+
+
+<!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 60px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧐</div>
+
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #f4fff9, #ffffff); color: #333; padding: 30px; border: 1px solid #b3f0db; border-radius: 20px; font-size: 18px; box-shadow: 0 6px 14px rgba(0,0,0,0.08);">
+    
+    <strong style="font-size: 26px; color: #006d5b; display:block; margin-bottom:15px;">
+      🗄️ Professional Skill: Master <span style="color:#009688;">Microsoft Access</span> Database Management
+    </strong>
+    
+    <p style="line-height:1.6; margin-bottom:25px;">
+      <em><u style="color:#006d5b;">Why this matters:</u></em><br>
+      Access is a powerful database tool for storing, organizing, and managing large amounts of data.  
+      Learning to build tables, queries, forms, and reports allows you to create professional data-driven applications 📊.
+    </p>
+
+    <strong style="font-size: 20px; color:#006d5b;">⚙️ Core Steps to Work with Access:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#ffffff; border-left:6px solid #009688; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#009688; font-size:20px; margin-bottom:10px;">Step 1</h3>
+        <p>➡️ Open <strong>Microsoft Access</strong> and select <em>Blank Database</em>.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#ffffff; border-left:6px solid #4caf50; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#4caf50; font-size:20px; margin-bottom:10px;">Step 2</h3>
+        <p>➡️ Create <strong>Tables</strong> to define fields (e.g., StudentID, Name, Grade).</p>
+
+        <table border="1" style="border-collapse:collapse; width:100%; margin-top:10px; text-align:center;">
+          <tr style="background:#e8f5e9;">
+            <th>StudentID</th>
+            <th>Name</th>
+            <th>Grade</th>
+          </tr>
+          <tr>
+            <td>101</td>
+            <td>Ali</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>102</td>
+            <td>Salma</td>
+            <td>B+</td>
+          </tr>
+          <tr>
+            <td>103</td>
+            <td>Kareem</td>
+            <td>A-</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#ffffff; border-left:6px solid #ff9800; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#ff9800; font-size:20px; margin-bottom:10px;">Step 3</h3>
+        <p>➡️ Build <strong>Queries</strong> to filter and analyze data (e.g., show only students with Grade = A).</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#ffffff; border-left:6px solid #3f51b5; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#3f51b5; font-size:20px; margin-bottom:10px;">Step 4</h3>
+        <p>➡️ Design <strong>Forms</strong> for easy data entry with user-friendly interfaces.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#ffffff; border-left:6px solid #e91e63; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#e91e63; font-size:20px; margin-bottom:10px;">Step 5</h3>
+        <p>➡️ Generate <strong>Reports</strong> to present data summaries and insights in a professional layout.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#ffffff; border-left:6px solid #795548; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color:#795548; font-size:20px; margin-bottom:10px;">Step 6</h3>
+        <p>➡️ Save and secure your database, and use relationships to link multiple tables.</p>
+      </div>
+
+    </div>
+
+    <br>
+    <div style="background:#f1f8e9; border-left:6px solid #4caf50; border-radius:12px; padding:18px; margin-top:25px; font-size:16px;">
+      <b>💡 Exercise:</b><br>
+      Create a database called <em>“SchoolDB”</em>:  
+      - Table 1: Students (ID, Name, Age, Grade)  
+      - Table 2: Courses (CourseID, CourseName, Teacher)  
+      - Build a query to list students with Grade “A”  
+      - Create a report showing students and their courses  
+    </div>
+
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">Access is best used for structured data where relationships between tables are critical. It bridges the gap between Excel spreadsheets and full-scale databases ⚡.</span>`,
+
+  "q": "Which sequence of steps correctly creates and manages a database in Microsoft Access?",
+  "a": "b",
+  "options": [
+    "Only type data randomly into Word without structure",
+    "Open Access → Create tables → Build queries → Design forms → Generate reports",
+    "Use Excel formulas without tables",
+    "Open Task Manager and close Access"
+  ]
+},
+
+
+{
+  "passage": `<div style="margin-top: 60px; max-width: 1000px; margin-left:auto; margin-right:auto;">
+
+
+<!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 60px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧐</div>
+
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #f9fbff, #ffffff); color: #333; padding: 30px; border: 1px solid #d6e4ff; border-radius: 20px; font-size: 18px; box-shadow: 0 6px 14px rgba(0,0,0,0.08);">
+    
+    <strong style="font-size: 26px; color: #004080; display:block; margin-bottom:15px;">
+      ⚡ Professional Skill: Mastering <span style="color:#0078d7;">Windows PowerShell</span>
+    </strong>
+    
+    <p style="line-height:1.6; margin-bottom:25px;">
+      <em><u style="color:#0056b3;">Why this matters:</u></em><br>
+      PowerShell is a powerful command-line and scripting environment for automating tasks, managing systems, and handling data efficiently. 
+      Knowing its core commands improves productivity, troubleshooting, and IT administration ⚙️.
+    </p>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Core Steps to Work with PowerShell:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#ffffff; border-left:6px solid #0078d7; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:10px;">Step 1</h3>
+        <p>➡️ Open <strong>Windows PowerShell</strong> from the Start menu (search: PowerShell).</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#ffffff; border-left:6px solid #00b294; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:10px;">Step 2</h3>
+        <p>➡️ Run basic commands like <code>Get-Help</code>, <code>Get-Process</code>, and <code>Get-Service</code> to explore your system.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#ffffff; border-left:6px solid #e81123; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:10px;">Step 3</h3>
+        <p>➡️ Use <strong>cmdlets</strong> (<code>Get-</code>, <code>Set-</code>, <code>New-</code>, <code>Remove-</code>) to manage files, users, and configurations.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#ffffff; border-left:6px solid #ffb900; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:10px;">Step 4</h3>
+        <p>➡️ Write simple <strong>scripts (.ps1)</strong> to automate repetitive tasks.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#ffffff; border-left:6px solid #605e5c; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:10px;">Step 5</h3>
+        <p>➡️ Use <code>Get-Help -Online</code> or <code>Update-Help</code> to learn new commands and stay updated.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#ffffff; border-left:6px solid #107c10; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:10px;">Step 6</h3>
+        <p>➡️ Manage remote systems securely with <strong>PowerShell Remoting</strong> (<code>Enter-PSSession</code>, <code>Invoke-Command</code>).</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">PowerShell combines command-line speed with scripting flexibility — mastering it makes you a true IT power user 🚀.</span>`, 
+
+  "q": "Which command is used to display currently running processes in PowerShell?",
+  "a": "b",
+  "options": [
+    "Show-Task",
+    "Get-Process",
+    "View-Services",
+    "Run-Apps"
+  ]
+},
+ 
+
+
+{
+  "passage": `<div style="margin-top: 60px; max-width: 1000px; margin-left:auto; margin-right:auto;">
+
+<!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 60px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧐</div>
+
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #f4f8ff, #ffffff); color: #333; padding: 30px; border: 1px solid #d0e2ff; border-radius: 20px; font-size: 18px; box-shadow: 0 6px 14px rgba(0,0,0,0.08);">
+    
+    <strong style="font-size: 26px; color: #004080; display:block; margin-bottom:15px;">
+      ⚡ Professional Skill: Core <span style="color:#0078d7;">IT Essentials</span>
+    </strong>
+    
+    <p style="line-height:1.6; margin-bottom:25px;">
+      <em><u style="color:#0056b3;">Why this matters:</u></em><br>
+      Information Technology (IT) forms the backbone of modern workplaces.  
+      From networking and cybersecurity to databases and troubleshooting, mastering IT essentials ensures systems run smoothly and securely 🔒.
+    </p>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Core Areas in IT:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#ffffff; border-left:6px solid #0078d7; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:10px;">Networking Basics</h3>
+        <p>➡️ Understand IP addresses, DNS, routers, and switches. Learn how devices connect and communicate 🌐.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#ffffff; border-left:6px solid #00b294; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:10px;">Cybersecurity</h3>
+        <p>➡️ Protect data with firewalls, antivirus, and encryption. Follow strong password and authentication policies 🔐.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#ffffff; border-left:6px solid #e81123; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:10px;">Operating Systems</h3>
+        <p>➡️ Manage Windows, Linux, and macOS. Perform updates, configurations, and troubleshooting efficiently 💻.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#ffffff; border-left:6px solid #ffb900; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:10px;">Databases</h3>
+        <p>➡️ Learn SQL basics, query data, and manage relational databases (MySQL, SQL Server, Oracle) 📊.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#ffffff; border-left:6px solid #605e5c; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:10px;">Cloud & Virtualization</h3>
+        <p>➡️ Explore platforms like AWS, Azure, and virtualization tools (VMware, Hyper-V) for scalable IT solutions ☁️.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#ffffff; border-left:6px solid #107c10; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:10px;">Troubleshooting</h3>
+        <p>➡️ Diagnose and fix hardware/software issues quickly using logs, monitoring tools, and structured problem-solving 🔧.</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">IT professionals thrive by constantly updating skills, embracing automation, and staying ahead of cyber threats 🚀.</span>`, 
+
+  "q": "Which IT skill focuses on protecting systems from viruses, hackers, and data breaches?",
+  "a": "b",
+  "options": [
+    "Networking",
+    "Cybersecurity",
+    "Databases",
+    "Virtualization"
+  ]
+},
+
+
+{
+  "passage": `<div style="margin-top: 60px; max-width: 1000px; margin-left:auto; margin-right:auto;">
+
+<!-- Emoji Sticky Animation -->
+  <div id="emoji-character" style="
+    position: sticky;
+    top: 20px;
+    float: right;
+    font-size: 60px;
+    margin-left: auto;
+    display: block;
+    z-index: 10;
+  ">🧐</div>
+
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #fdfefe, #f5faff); color: #333; padding: 30px; border: 1px solid #d0e2ff; border-radius: 20px; font-size: 18px; box-shadow: 0 6px 14px rgba(0,0,0,0.08);">
+    
+    <strong style="font-size: 26px; color: #004080; display:block; margin-bottom:15px;">
+      ⚡ Professional Skill: Mastering the <span style="color:#0078d7;">Internet</span> for Work & Learning
+    </strong>
+    
+    <p style="line-height:1.6; margin-bottom:25px;">
+      <em><u style="color:#0056b3;">Why this matters:</u></em><br>
+      The Internet is the gateway to information, communication, and services 🌍.  
+      Mastering it ensures safe browsing, effective searching, and professional online communication 📧.
+    </p>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Core Internet Skills:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#ffffff; border-left:6px solid #0078d7; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:10px;">Web Browsing</h3>
+        <p>➡️ Use browsers (Chrome, Edge, Firefox) to access websites. Learn tabs, bookmarks, and extensions 🌐.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#ffffff; border-left:6px solid #00b294; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:10px;">Search Engines</h3>
+        <p>➡️ Master Google/Bing search with keywords, filters, and advanced operators to find reliable info 🔍.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#ffffff; border-left:6px solid #e81123; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:10px;">Email & Communication</h3>
+        <p>➡️ Use Gmail, Outlook, or Yahoo for professional email. Write clear subjects, attach files, and CC/BCC ✉️.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#ffffff; border-left:6px solid #ffb900; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:10px;">Cloud Services</h3>
+        <p>➡️ Store and share files securely using OneDrive, Google Drive, or Dropbox ☁️.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#ffffff; border-left:6px solid #605e5c; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:10px;">Online Safety</h3>
+        <p>➡️ Avoid phishing, scams, and unsafe websites. Check HTTPS and use antivirus & VPN 🔐.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#ffffff; border-left:6px solid #107c10; border-radius:14px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s;">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:10px;">Collaboration Tools</h3>
+        <p>➡️ Use platforms like Zoom, Teams, and Google Meet for meetings and teamwork 🤝.</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">The Internet is powerful — use it wisely, balance productivity with security, and always verify information ⚠️.</span>`, 
+
+  "q": "Which skill helps you find reliable information using Google or Bing with keywords and filters?",
+  "a": "b",
+  "options": [
+    "Email Communication",
+    "Search Engines",
+    "Cloud Services",
+    "Collaboration Tools"
+  ]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    
+    <strong style="font-size: 24px; color: #0056b3;">⚡ Action: Manage <span style="color:#0078d7;">Windows Services</span> using Services.msc</strong><br><br>
+    
+    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
+    Windows Services are background processes essential for system performance and security. Learning to manage them helps in troubleshooting, optimizing performance, and securing your system 🔐.<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Steps to open and manage Windows Services:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">Step 1</h3>
+        <p>➡️ Press <strong>Win + R</strong> to open the Run dialog.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">Step 2</h3>
+        <p>➡️ Type <strong>services.msc</strong> and press Enter.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">Step 3</h3>
+        <p>➡️ Browse the list of services (e.g., Windows Update, Print Spooler, etc.).</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">Step 4</h3>
+        <p>➡️ Right-click on a service → choose <strong>Start</strong>, <strong>Stop</strong>, or <strong>Restart</strong>.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">Step 5</h3>
+        <p>➡️ Double-click a service to open its properties and set <strong>Startup Type</strong> (Automatic, Manual, Disabled).</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">Step 6</h3>
+        <p>➡️ Apply changes carefully, as disabling critical services may affect system stability.</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">Managing services is powerful. Disable only services you understand well, otherwise you risk losing essential Windows functionality ⚠️.</span>`,
+
+  "q": "Which sequence of steps correctly allows you to access and manage Windows Services?",
+  "a": "b",
+  "options": [
+    "Press Ctrl + Alt + Del and close all background tasks",
+    "Press Win + R → Type services.msc → Browse and manage services",
+    "Open File Explorer and delete system files",
+    "Use only Task Manager without opening Services.msc"
+  ]
+},
+
+
+{
+  passage: `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    
+    <strong style="font-size: 24px; color: #0056b3;">⚡ Action: Manage <span style="color:#0078d7;">Windows Services</span> with <span style="color:#0078d7;">PowerShell</span></strong><br><br>
+    
+    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
+    Services are critical components running in the background. Managing them with PowerShell allows automation, troubleshooting, and better control over the system ⚙️.<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Steps to manage services effectively:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">Step 1</h3>
+        <p>➡️ List all running services:</p>
+        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
+          Get-Service
+        </code>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">Step 2</h3>
+        <p>➡️ Check the status of a specific service (e.g., <strong>Spooler</strong>):</p>
+        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
+          Get-Service -Name Spooler
+        </code>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">Step 3</h3>
+        <p>➡️ Stop a service (requires admin rights):</p>
+        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
+          Stop-Service -Name Spooler
+        </code>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">Step 4</h3>
+        <p>➡️ Start a service:</p>
+        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
+          Start-Service -Name Spooler
+        </code>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">Step 5</h3>
+        <p>➡️ Restart a service:</p>
+        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
+          Restart-Service -Name Spooler
+        </code>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">Step 6</h3>
+        <p>➡️ Set a service startup type (Automatic/Manual/Disabled):</p>
+        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
+          Set-Service -Name Spooler -StartupType Automatic
+        </code>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">Always ensure you have admin rights when modifying critical services. Stopping essential services may affect system stability ⚠️.</span>`,
+
+  q: "Which sequence of steps allows you to manage services with PowerShell safely?",
+  a: "b",
+  options: [
+    "Reinstall Windows to refresh services",
+    "Use Get-Service to check, Stop-Service to stop, Start-Service to run, and Set-Service to configure",
+    "Delete the service executable from System32",
+    "Change permissions manually from the GUI only"
+  ]
+},
+
+
+{
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    
+    <strong style="font-size: 24px; color: #0056b3;">⚡ Action: Use and Modify <span style="color:#0078d7;">Styles</span> in Microsoft Word</strong><br><br>
+    
+    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
+    Styles in Word help you apply consistent formatting across large documents 📑. Mastering them allows you to control headings, fonts, spacing, and even automatically update formatting with one click ✨.<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Steps to apply and customize Styles:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">Step 1</h3>
+        <p>➡️ Select the text you want to format.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">Step 2</h3>
+        <p>➡️ Go to the <strong>Home</strong> tab → <strong>Styles</strong> group.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">Step 3</h3>
+        <p>➡️ Click a built-in style (e.g., Heading 1, Heading 2, Normal) to apply it instantly.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">Step 4</h3>
+        <p>➡️ Right-click a style → choose <strong>Modify</strong> to change font, size, color, spacing, etc.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">Step 5</h3>
+        <p>➡️ Select <strong>New documents based on this template</strong> if you want the style to be available in future documents.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">Step 6</h3>
+        <p>➡️ Apply consistent styles across the document for professional formatting and easy navigation.</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">Using Styles properly also helps in creating automatic navigation panels and exporting to PDF with structured headings 📚.</span>`,
+
+  "q": "What is the correct way to apply and customize Styles in Microsoft Word?",
+  "a": "b",
+  "options": [
+    "Manually change font and size for each heading",
+    "Go to Home tab → Styles group → Apply or Modify styles",
+    "Insert shapes and apply formatting to them",
+    "Use only the Format Painter without Styles"
+  ]
+},
+
+
+
+{
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    
+    <strong style="font-size: 24px; color: #0056b3;">📑 Action: Create and Manage <span style="color:#0078d7;">Table of Contents</span> in Word</strong><br><br>
+    
+    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
+    A <strong>Table of Contents</strong> automatically organizes document headings into a structured index. It’s critical for academic papers, reports, and long documents to improve navigation and professionalism 📘.<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Steps to create and manage a Table of Contents:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">Step 1</h3>
+        <p>➡️ Apply built-in heading styles (Heading 1, Heading 2, etc.) to your document titles and subtitles.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">Step 2</h3>
+        <p>➡️ Place the cursor where you want the Table of Contents to appear (usually at the beginning).</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">Step 3</h3>
+        <p>➡️ Go to the <strong>References</strong> tab → Click <strong>Table of Contents</strong> → Choose a built-in style.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">Step 4</h3>
+        <p>➡️ Update the Table anytime by right-clicking it → <strong>Update Field</strong> (to refresh headings and page numbers).</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">Step 5</h3>
+        <p>➡️ Customize: Use <strong>Custom Table of Contents</strong> to adjust levels, styles, and formatting.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">Step 6</h3>
+        <p>➡️ Save as template if you want the same ToC style across multiple documents.</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">If you don’t apply heading styles, Word cannot generate a Table of Contents. Styles are the backbone of automation ⚠️.</span>`,
+
+  "q": "Which sequence of steps correctly generates a Table of Contents in Microsoft Word?",
+  "a": "b",
+  "options": [
+    "Manually type all headings and page numbers in a list",
+    "Apply heading styles → References tab → Table of Contents → Choose style",
+    "Insert a text box and copy headings inside",
+    "Use only bold formatting without applying heading styles"
+  ]
+},
+
 
 
 
@@ -862,117 +1771,291 @@ input[type="radio"] {
   "passage": `<div style="margin-top: 120px;">
   <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
     
-    <strong style="font-size: 24px; color: #0056b3;">💻 Practicing <span style="color:#0078d7;">Excel Advanced Functions with Examples</span></strong><br><br>
+    <strong style="font-size: 24px; color: #0056b3;">🧮 Action: Practicing <span style="color:#0078d7;">Excel Functions with Sample Data</span></strong><br><br>
     
     <em><u style="color:#0056b3;">Why this is important:</u></em><br>
-    Hands-on training with real numbers helps learners apply formulas in Excel and see results instantly. 🎯<br><br>
+    Functions in Excel are best learned by practice. Using small sample datasets allows you to test formulas directly and understand results faster 🚀.<br><br>
 
-    <strong style="font-size: 20px; color:#004080;">📘 Functions with Practical Examples:</strong><br><br>
+    <strong style="font-size: 20px; color:#004080;">⚙️ Key Functions and Practice Tables:</strong><br><br>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
       
       <!-- Card 1 -->
       <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. VLOOKUP</h3>
-        <p>➡️ Search for an employee’s department.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>ID</th><th>Name</th><th>Department</th></tr>
-          <tr><td>101</td><td>Ali</td><td>HR</td></tr>
-          <tr><td>102</td><td>Sara</td><td>IT</td></tr>
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. SUM()</h3>
+        <p>➡️ Adds numbers in a range.<br><br>
+        <b>Sample Data:</b><br>
+        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
+          <tr><th>Sales</th></tr>
+          <tr><td>100</td></tr>
+          <tr><td>200</td></tr>
+          <tr><td>150</td></tr>
+          <tr><td>250</td></tr>
+          <tr><td>300</td></tr>
         </table>
-        <p><b>Formula:</b> =VLOOKUP(102, A2:C3, 3, FALSE)<br>
-        <b>Result:</b> IT ✅</p>
+        <b>Exercise:</b> In A6 type: <code>=SUM(A1:A5)</code>
+        </p>
       </div>
 
       <!-- Card 2 -->
       <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. INDEX + MATCH</h3>
-        <p>➡️ Find salary of Kareem.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>Name</th><th>Salary</th></tr>
-          <tr><td>Kareem</td><td>5000</td></tr>
-          <tr><td>Mona</td><td>6000</td></tr>
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. AVERAGE()</h3>
+        <p>➡️ Calculates the mean of values.<br><br>
+        <b>Sample Data:</b><br>
+        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
+          <tr><th>Scores</th></tr>
+          <tr><td>80</td></tr>
+          <tr><td>90</td></tr>
+          <tr><td>70</td></tr>
+          <tr><td>60</td></tr>
+          <tr><td>100</td></tr>
         </table>
-        <p><b>Formula:</b> =INDEX(B2:B3, MATCH("Kareem", A2:A3, 0))<br>
-        <b>Result:</b> 5000 ✅</p>
+        <b>Exercise:</b> In B6 type: <code>=AVERAGE(B1:B5)</code>
+        </p>
       </div>
 
       <!-- Card 3 -->
       <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. IF + Nested IF</h3>
-        <p>➡️ Grade student based on score.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:50%; text-align:center;">
-          <tr><th>Score</th></tr>
-          <tr><td>72</td></tr>
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. IF()</h3>
+        <p>➡️ Returns a value based on a condition.<br><br>
+        <b>Sample Data:</b><br>
+        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
+          <tr><th>Student</th><th>Score</th></tr>
+          <tr><td>Ali</td><td>45</td></tr>
+          <tr><td>Sara</td><td>78</td></tr>
+          <tr><td>Omar</td><td>55</td></tr>
+          <tr><td>Nora</td><td>30</td></tr>
         </table>
-        <p><b>Formula:</b> =IF(B2>=90,"Excellent",IF(B2>=50,"Pass","Fail"))<br>
-        <b>Result:</b> Pass ✅</p>
+        <b>Exercise:</b> In C2 type: <code>=IF(B2&gt;=50,"Pass","Fail")</code> then drag down.
+        </p>
       </div>
 
       <!-- Card 4 -->
       <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. SUMIFS</h3>
-        <p>➡️ Total sales in 2024.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>Type</th><th>Year</th><th>Amount</th></tr>
-          <tr><td>Sales</td><td>2024</td><td>3000</td></tr>
-          <tr><td>Sales</td><td>2023</td><td>2000</td></tr>
-          <tr><td>Sales</td><td>2024</td><td>2500</td></tr>
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. VLOOKUP()</h3>
+        <p>➡️ Searches a value in the first column of a table.<br><br>
+        <b>Sample Data:</b><br>
+        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
+          <tr><th>ID</th><th>Name</th></tr>
+          <tr><td>101</td><td>Ali</td></tr>
+          <tr><td>102</td><td>Sara</td></tr>
+          <tr><td>103</td><td>Omar</td></tr>
+          <tr><td>104</td><td>Nora</td></tr>
         </table>
-        <p><b>Formula:</b> =SUMIFS(C2:C4, A2:A4,"Sales", B2:B4,2024)<br>
-        <b>Result:</b> 5500 ✅</p>
+        <b>Exercise:</b> In D1 type: <code>=VLOOKUP(102,A2:B5,2,FALSE)</code>
+        </p>
       </div>
 
       <!-- Card 5 -->
       <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. TEXT & DATE</h3>
-        <p>➡️ Show today’s date in custom format.</p>
-        <p><b>Formula:</b> =TEXT(TODAY(),"DD-MMM-YYYY")<br>
-        <b>Result:</b> 31-Aug-2025 ✅</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">6. PMT (Financial)</h3>
-        <p>➡️ Loan monthly payment.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>Loan</th><th>Rate</th><th>Years</th></tr>
-          <tr><td>50000</td><td>5%</td><td>5</td></tr>
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. CONCAT()</h3>
+        <p>➡️ Joins text from multiple cells.<br><br>
+        <b>Sample Data:</b><br>
+        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
+          <tr><th>First Name</th><th>Last Name</th></tr>
+          <tr><td>Ali</td><td>Hassan</td></tr>
+          <tr><td>Sara</td><td>Yousef</td></tr>
+          <tr><td>Omar</td><td>Khaled</td></tr>
         </table>
-        <p><b>Formula:</b> =PMT(5%/12, 60, -50000)<br>
-        <b>Result:</b> -943.56 (monthly) ✅</p>
-      </div>
-
-      <!-- Card 7 -->
-      <div style="background:#fff; border-left:6px solid #800080; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#800080; font-size:20px; margin-bottom:8px;">7. Power Query</h3>
-        <p>➡️ Import and clean sales data.</p>
-        <table border="1" cellpadding="6" style="border-collapse: collapse; width:100%; text-align:center;">
-          <tr><th>Name</th><th>Sales</th></tr>
-          <tr><td>Ali</td><td>2000</td></tr>
-          <tr><td>Ali</td><td>2000</td></tr>
-          <tr><td>Sara</td><td>3000</td></tr>
-        </table>
-        <p><b>Action:</b> Use Data → Get & Transform → Remove Duplicates<br>
-        <b>Result:</b> Clean list without duplicates ✅</p>
+        <b>Exercise:</b> In C2 type: <code>=CONCAT(A2," ",B2)</code> then drag down.
+        </p>
       </div>
 
     </div>
   </div>
 </div><br>
 
-<b style="font-size: 17px; color:#cc0000;">Tip:</b> 
-<span style="color:#333;">Use the tables above directly in Excel to practice the formulas step by step ✅.</span>`,
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">Type the sample data in Excel as shown in the small tables, then apply the formulas to see real results 🔥.</span>`,
 
-  "q": "If you want to calculate total sales for 2024 only, which Excel function should you use?",
-  "a": "d",
+  "q": "Which approach is best for learning Excel functions effectively?",
+  "a": "b",
   "options": [
-    "VLOOKUP",
-    "INDEX+MATCH",
-    "PMT",
-    "SUMIFS"
+    "Memorize all formulas without data",
+    "Enter sample data tables and practice formulas like SUM, AVERAGE, IF, VLOOKUP, and CONCAT",
+    "Only watch videos without trying in Excel",
+    "Format the worksheet without using formulas"
   ]
 },
+
+
+
+
+
+
+
+{
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    
+    <strong style="font-size: 24px; color: #0056b3;">💻 Introduction: Understanding <span style="color:#0078d7;">ICDL Course</span></strong><br><br>
+    
+    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
+    The ICDL course builds essential computer skills that help learners use technology effectively in both work and daily life. It covers everything from the basics of computers to professional use of software and IT security. 🎯<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">📘 Core ICDL Modules:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. Computer Essentials</h3>
+        <p>➡️ Covers the fundamentals of using a computer: operating systems, file management, working with folders, storage devices, and basic troubleshooting. It ensures learners are confident in managing computer tasks effectively 💻.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. IT Security</h3>
+        <p>➡️ Focuses on protecting data and devices from digital threats. Topics include creating strong passwords, using antivirus software, safe internet practices, email security, and understanding encryption 🔐.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. Word Processing</h3>
+        <p>➡️ Teaches how to create, format, and edit professional documents using Microsoft Word. Includes working with text, tables, styles, references, and page layouts to prepare official reports and letters 📝.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. Spreadsheets</h3>
+        <p>➡️ Focuses on Microsoft Excel for managing data, formulas, and functions. Learners will build tables, create charts, and apply formulas to perform calculations and analyze information 📊.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. Presentations</h3>
+        <p>➡️ Introduces Microsoft PowerPoint for designing impactful presentations. Covers slide design, use of images, animations, transitions, and presenting techniques for academic or professional settings 🎤.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">6. Databases</h3>
+        <p>➡️ Explains the basics of databases using Microsoft Access. Learners will understand tables, queries, forms, and reports to manage and organize large amounts of information efficiently 📚.</p>
+      </div>
+
+      <!-- Card 7 -->
+      <div style="background:#fff; border-left:6px solid #800080; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#800080; font-size:20px; margin-bottom:8px;">7. Online Collaboration</h3>
+        <p>➡️ Focuses on working with cloud tools and collaboration platforms. Topics include sharing documents, real-time editing, video conferencing, and teamwork tools to enhance productivity 🌍.</p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Course Goal:</b> 
+<span style="color:#333;">To empower learners with essential digital skills that improve employability, productivity, and safety in the digital world ✅.</span>`,
+
+  "q": "Which ICDL module teaches how to protect data and devices from cyber threats?",
+  "a": "b",
+  "options": [
+    "Computer Essentials",
+    "IT Security",
+    "Databases",
+    "Word Processing"
+  ]
+},
+
+
+
+{
+  "passage": `<div style="margin-top: 120px;">
+  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    
+    <strong style="font-size: 24px; color: #0056b3;">✨ Action: Learn <span style="color:#0078d7;">Animations in PowerPoint</span></strong><br><br>
+    
+    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
+    Animations make your presentations more engaging and help emphasize key points. Practicing them with real examples improves your presentation design skills 🎨.<br><br>
+
+    <strong style="font-size: 20px; color:#004080;">⚙️ Key Animations and Practice Steps:</strong><br><br>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. Fade In</h3>
+        <p>➡️ Makes objects gradually appear.<br><br>
+        <b>Exercise:</b><br>
+        1️⃣ Insert a shape or text box.<br>
+        2️⃣ Go to <strong>Animations → Fade</strong>.<br>
+        3️⃣ Set <strong>Duration</strong> to 2 seconds.<br>
+        4️⃣ Preview the animation.<br><br>
+        <b>Tip:</b> Use for titles or images to create smooth entrances.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. Fly In</h3>
+        <p>➡️ Makes objects enter from a specific direction.<br><br>
+        <b>Exercise:</b><br>
+        1️⃣ Select an object.<br>
+        2️⃣ Go to <strong>Animations → Fly In</strong>.<br>
+        3️⃣ Choose <strong>From Left</strong>.<br>
+        4️⃣ Adjust <strong>Speed</strong> to Medium.<br>
+        5️⃣ Preview the slide.<br><br>
+        <b>Tip:</b> Great for bullet points or step-by-step instructions.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. Motion Path</h3>
+        <p>➡️ Moves objects along a path.<br><br>
+        <b>Exercise:</b><br>
+        1️⃣ Insert a shape.<br>
+        2️⃣ Go to <strong>Animations → Add Animation → Motion Path</strong>.<br>
+        3️⃣ Select <strong>Custom Path</strong> and draw a line.<br>
+        4️⃣ Preview and adjust speed.<br><br>
+        <b>Tip:</b> Perfect for demonstrating processes or flows.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. Emphasis: Spin</h3>
+        <p>➡️ Makes objects rotate or pulse.<br><br>
+        <b>Exercise:</b><br>
+        1️⃣ Select the object.<br>
+        2️⃣ Go to <strong>Animations → Spin</strong>.<br>
+        3️⃣ Set <strong>Duration</strong> to 1.5 seconds.<br>
+        4️⃣ Preview and adjust repeat if needed.<br><br>
+        <b>Tip:</b> Use for highlighting icons or key points.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. Animation Pane</h3>
+        <p>➡️ Controls all animations on a slide.<br><br>
+        <b>Exercise:</b><br>
+        1️⃣ Go to <strong>Animations → Animation Pane</strong>.<br>
+        2️⃣ Reorder animations by dragging.<br>
+        3️⃣ Adjust <strong>Start</strong> to On Click / With Previous / After Previous.<br>
+        4️⃣ Preview sequence for smooth effect.<br><br>
+        <b>Tip:</b> Essential for coordinating multiple animations on a slide.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div><br>
+
+<b style="font-size: 17px; color:#cc0000;">Note:</b> 
+<span style="color:#333;">Try these animations on your own PowerPoint slides to see effects live and build interactive presentations 🎬.</span>`,
+
+  "q": "Which approach is best for learning PowerPoint animations effectively?",
+  "a": "b",
+  "options": [
+    "Read about animations without trying them",
+    "Insert objects and apply animations like Fade, Fly In, Motion Path, Spin, and use Animation Pane",
+    "Only use pre-made templates without editing",
+    "Format slides with colors and fonts only"
+  ]
+},
+
+
+
 
 
 
@@ -1348,71 +2431,6 @@ input[type="radio"] {
 },
 
 
-{
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    
-    <strong style="font-size: 24px; color: #0056b3;">⚡ Action: Use and Modify <span style="color:#0078d7;">Styles</span> in Microsoft Word</strong><br><br>
-    
-    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
-    Styles in Word help you apply consistent formatting across large documents 📑. Mastering them allows you to control headings, fonts, spacing, and even automatically update formatting with one click ✨.<br><br>
-
-    <strong style="font-size: 20px; color:#004080;">⚙️ Steps to apply and customize Styles:</strong><br><br>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">Step 1</h3>
-        <p>➡️ Select the text you want to format.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">Step 2</h3>
-        <p>➡️ Go to the <strong>Home</strong> tab → <strong>Styles</strong> group.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">Step 3</h3>
-        <p>➡️ Click a built-in style (e.g., Heading 1, Heading 2, Normal) to apply it instantly.</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">Step 4</h3>
-        <p>➡️ Right-click a style → choose <strong>Modify</strong> to change font, size, color, spacing, etc.</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">Step 5</h3>
-        <p>➡️ Select <strong>New documents based on this template</strong> if you want the style to be available in future documents.</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">Step 6</h3>
-        <p>➡️ Apply consistent styles across the document for professional formatting and easy navigation.</p>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#cc0000;">Note:</b> 
-<span style="color:#333;">Using Styles properly also helps in creating automatic navigation panels and exporting to PDF with structured headings 📚.</span>`,
-
-  "q": "What is the correct way to apply and customize Styles in Microsoft Word?",
-  "a": "b",
-  "options": [
-    "Manually change font and size for each heading",
-    "Go to Home tab → Styles group → Apply or Modify styles",
-    "Insert shapes and apply formatting to them",
-    "Use only the Format Painter without Styles"
-  ]
-},
 
 {
   "passage": `<div style="margin-top: 120px;">
@@ -1585,249 +2603,10 @@ input[type="radio"] {
 
 
 
-{
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    
-    <strong style="font-size: 24px; color: #0056b3;">⚡ Action: Manage <span style="color:#0078d7;">Windows Services</span> using Services.msc</strong><br><br>
-    
-    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
-    Windows Services are background processes essential for system performance and security. Learning to manage them helps in troubleshooting, optimizing performance, and securing your system 🔐.<br><br>
-
-    <strong style="font-size: 20px; color:#004080;">⚙️ Steps to open and manage Windows Services:</strong><br><br>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">Step 1</h3>
-        <p>➡️ Press <strong>Win + R</strong> to open the Run dialog.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">Step 2</h3>
-        <p>➡️ Type <strong>services.msc</strong> and press Enter.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">Step 3</h3>
-        <p>➡️ Browse the list of services (e.g., Windows Update, Print Spooler, etc.).</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">Step 4</h3>
-        <p>➡️ Right-click on a service → choose <strong>Start</strong>, <strong>Stop</strong>, or <strong>Restart</strong>.</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">Step 5</h3>
-        <p>➡️ Double-click a service to open its properties and set <strong>Startup Type</strong> (Automatic, Manual, Disabled).</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">Step 6</h3>
-        <p>➡️ Apply changes carefully, as disabling critical services may affect system stability.</p>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#cc0000;">Note:</b> 
-<span style="color:#333;">Managing services is powerful. Disable only services you understand well, otherwise you risk losing essential Windows functionality ⚠️.</span>`,
-
-  "q": "Which sequence of steps correctly allows you to access and manage Windows Services?",
-  "a": "b",
-  "options": [
-    "Press Ctrl + Alt + Del and close all background tasks",
-    "Press Win + R → Type services.msc → Browse and manage services",
-    "Open File Explorer and delete system files",
-    "Use only Task Manager without opening Services.msc"
-  ]
-},
 
 
-{
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    
-    <strong style="font-size: 24px; color: #0056b3;">📑 Action: Create and Manage <span style="color:#0078d7;">Table of Contents</span> in Word</strong><br><br>
-    
-    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
-    A <strong>Table of Contents</strong> automatically organizes document headings into a structured index. It’s critical for academic papers, reports, and long documents to improve navigation and professionalism 📘.<br><br>
 
-    <strong style="font-size: 20px; color:#004080;">⚙️ Steps to create and manage a Table of Contents:</strong><br><br>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">Step 1</h3>
-        <p>➡️ Apply built-in heading styles (Heading 1, Heading 2, etc.) to your document titles and subtitles.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">Step 2</h3>
-        <p>➡️ Place the cursor where you want the Table of Contents to appear (usually at the beginning).</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">Step 3</h3>
-        <p>➡️ Go to the <strong>References</strong> tab → Click <strong>Table of Contents</strong> → Choose a built-in style.</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">Step 4</h3>
-        <p>➡️ Update the Table anytime by right-clicking it → <strong>Update Field</strong> (to refresh headings and page numbers).</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">Step 5</h3>
-        <p>➡️ Customize: Use <strong>Custom Table of Contents</strong> to adjust levels, styles, and formatting.</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">Step 6</h3>
-        <p>➡️ Save as template if you want the same ToC style across multiple documents.</p>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#cc0000;">Note:</b> 
-<span style="color:#333;">If you don’t apply heading styles, Word cannot generate a Table of Contents. Styles are the backbone of automation ⚠️.</span>`,
-
-  "q": "Which sequence of steps correctly generates a Table of Contents in Microsoft Word?",
-  "a": "b",
-  "options": [
-    "Manually type all headings and page numbers in a list",
-    "Apply heading styles → References tab → Table of Contents → Choose style",
-    "Insert a text box and copy headings inside",
-    "Use only bold formatting without applying heading styles"
-  ]
-},
-
-{
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    
-    <strong style="font-size: 24px; color: #0056b3;">🧮 Action: Practicing <span style="color:#0078d7;">Excel Functions with Sample Data</span></strong><br><br>
-    
-    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
-    Functions in Excel are best learned by practice. Using small sample datasets allows you to test formulas directly and understand results faster 🚀.<br><br>
-
-    <strong style="font-size: 20px; color:#004080;">⚙️ Key Functions and Practice Tables:</strong><br><br>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. SUM()</h3>
-        <p>➡️ Adds numbers in a range.<br><br>
-        <b>Sample Data:</b><br>
-        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
-          <tr><th>Sales</th></tr>
-          <tr><td>100</td></tr>
-          <tr><td>200</td></tr>
-          <tr><td>150</td></tr>
-          <tr><td>250</td></tr>
-          <tr><td>300</td></tr>
-        </table>
-        <b>Exercise:</b> In A6 type: <code>=SUM(A1:A5)</code>
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. AVERAGE()</h3>
-        <p>➡️ Calculates the mean of values.<br><br>
-        <b>Sample Data:</b><br>
-        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
-          <tr><th>Scores</th></tr>
-          <tr><td>80</td></tr>
-          <tr><td>90</td></tr>
-          <tr><td>70</td></tr>
-          <tr><td>60</td></tr>
-          <tr><td>100</td></tr>
-        </table>
-        <b>Exercise:</b> In B6 type: <code>=AVERAGE(B1:B5)</code>
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. IF()</h3>
-        <p>➡️ Returns a value based on a condition.<br><br>
-        <b>Sample Data:</b><br>
-        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
-          <tr><th>Student</th><th>Score</th></tr>
-          <tr><td>Ali</td><td>45</td></tr>
-          <tr><td>Sara</td><td>78</td></tr>
-          <tr><td>Omar</td><td>55</td></tr>
-          <tr><td>Nora</td><td>30</td></tr>
-        </table>
-        <b>Exercise:</b> In C2 type: <code>=IF(B2&gt;=50,"Pass","Fail")</code> then drag down.
-        </p>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. VLOOKUP()</h3>
-        <p>➡️ Searches a value in the first column of a table.<br><br>
-        <b>Sample Data:</b><br>
-        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
-          <tr><th>ID</th><th>Name</th></tr>
-          <tr><td>101</td><td>Ali</td></tr>
-          <tr><td>102</td><td>Sara</td></tr>
-          <tr><td>103</td><td>Omar</td></tr>
-          <tr><td>104</td><td>Nora</td></tr>
-        </table>
-        <b>Exercise:</b> In D1 type: <code>=VLOOKUP(102,A2:B5,2,FALSE)</code>
-        </p>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. CONCAT()</h3>
-        <p>➡️ Joins text from multiple cells.<br><br>
-        <b>Sample Data:</b><br>
-        <table border="1" cellpadding="6" style="border-collapse:collapse; margin:10px 0;">
-          <tr><th>First Name</th><th>Last Name</th></tr>
-          <tr><td>Ali</td><td>Hassan</td></tr>
-          <tr><td>Sara</td><td>Yousef</td></tr>
-          <tr><td>Omar</td><td>Khaled</td></tr>
-        </table>
-        <b>Exercise:</b> In C2 type: <code>=CONCAT(A2," ",B2)</code> then drag down.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#cc0000;">Note:</b> 
-<span style="color:#333;">Type the sample data in Excel as shown in the small tables, then apply the formulas to see real results 🔥.</span>`,
-
-  "q": "Which approach is best for learning Excel functions effectively?",
-  "a": "b",
-  "options": [
-    "Memorize all formulas without data",
-    "Enter sample data tables and practice formulas like SUM, AVERAGE, IF, VLOOKUP, and CONCAT",
-    "Only watch videos without trying in Excel",
-    "Format the worksheet without using formulas"
-  ]
-},
 
 
 {
@@ -2038,194 +2817,13 @@ input[type="radio"] {
 
 
 
-{
-  "passage": `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    
-    <strong style="font-size: 24px; color: #0056b3;">✨ Action: Learn <span style="color:#0078d7;">Animations in PowerPoint</span></strong><br><br>
-    
-    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
-    Animations make your presentations more engaging and help emphasize key points. Practicing them with real examples improves your presentation design skills 🎨.<br><br>
-
-    <strong style="font-size: 20px; color:#004080;">⚙️ Key Animations and Practice Steps:</strong><br><br>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">1. Fade In</h3>
-        <p>➡️ Makes objects gradually appear.<br><br>
-        <b>Exercise:</b><br>
-        1️⃣ Insert a shape or text box.<br>
-        2️⃣ Go to <strong>Animations → Fade</strong>.<br>
-        3️⃣ Set <strong>Duration</strong> to 2 seconds.<br>
-        4️⃣ Preview the animation.<br><br>
-        <b>Tip:</b> Use for titles or images to create smooth entrances.
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">2. Fly In</h3>
-        <p>➡️ Makes objects enter from a specific direction.<br><br>
-        <b>Exercise:</b><br>
-        1️⃣ Select an object.<br>
-        2️⃣ Go to <strong>Animations → Fly In</strong>.<br>
-        3️⃣ Choose <strong>From Left</strong>.<br>
-        4️⃣ Adjust <strong>Speed</strong> to Medium.<br>
-        5️⃣ Preview the slide.<br><br>
-        <b>Tip:</b> Great for bullet points or step-by-step instructions.
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">3. Motion Path</h3>
-        <p>➡️ Moves objects along a path.<br><br>
-        <b>Exercise:</b><br>
-        1️⃣ Insert a shape.<br>
-        2️⃣ Go to <strong>Animations → Add Animation → Motion Path</strong>.<br>
-        3️⃣ Select <strong>Custom Path</strong> and draw a line.<br>
-        4️⃣ Preview and adjust speed.<br><br>
-        <b>Tip:</b> Perfect for demonstrating processes or flows.
-        </p>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">4. Emphasis: Spin</h3>
-        <p>➡️ Makes objects rotate or pulse.<br><br>
-        <b>Exercise:</b><br>
-        1️⃣ Select the object.<br>
-        2️⃣ Go to <strong>Animations → Spin</strong>.<br>
-        3️⃣ Set <strong>Duration</strong> to 1.5 seconds.<br>
-        4️⃣ Preview and adjust repeat if needed.<br><br>
-        <b>Tip:</b> Use for highlighting icons or key points.
-        </p>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">5. Animation Pane</h3>
-        <p>➡️ Controls all animations on a slide.<br><br>
-        <b>Exercise:</b><br>
-        1️⃣ Go to <strong>Animations → Animation Pane</strong>.<br>
-        2️⃣ Reorder animations by dragging.<br>
-        3️⃣ Adjust <strong>Start</strong> to On Click / With Previous / After Previous.<br>
-        4️⃣ Preview sequence for smooth effect.<br><br>
-        <b>Tip:</b> Essential for coordinating multiple animations on a slide.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#cc0000;">Note:</b> 
-<span style="color:#333;">Try these animations on your own PowerPoint slides to see effects live and build interactive presentations 🎬.</span>`,
-
-  "q": "Which approach is best for learning PowerPoint animations effectively?",
-  "a": "b",
-  "options": [
-    "Read about animations without trying them",
-    "Insert objects and apply animations like Fade, Fly In, Motion Path, Spin, and use Animation Pane",
-    "Only use pre-made templates without editing",
-    "Format slides with colors and fonts only"
-  ]
-},
 
 
 
 
 
 
-
-
-    {
-  passage: `<div style="margin-top: 120px;">
-  <div style="font-family: Segoe UI, Arial, sans-serif; background-color: #f9fbff; color: #333; padding: 25px; border: 2px solid #cce0ff; border-radius: 15px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    
-    <strong style="font-size: 24px; color: #0056b3;">⚡ Action: Manage <span style="color:#0078d7;">Windows Services</span> with <span style="color:#0078d7;">PowerShell</span></strong><br><br>
-    
-    <em><u style="color:#0056b3;">Why this is important:</u></em><br>
-    Services are critical components running in the background. Managing them with PowerShell allows automation, troubleshooting, and better control over the system ⚙️.<br><br>
-
-    <strong style="font-size: 20px; color:#004080;">⚙️ Steps to manage services effectively:</strong><br><br>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; border-left:6px solid #0078d7; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#0078d7; font-size:20px; margin-bottom:8px;">Step 1</h3>
-        <p>➡️ List all running services:</p>
-        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
-          Get-Service
-        </code>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; border-left:6px solid #00b294; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#00b294; font-size:20px; margin-bottom:8px;">Step 2</h3>
-        <p>➡️ Check the status of a specific service (e.g., <strong>Spooler</strong>):</p>
-        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
-          Get-Service -Name Spooler
-        </code>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; border-left:6px solid #e81123; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#e81123; font-size:20px; margin-bottom:8px;">Step 3</h3>
-        <p>➡️ Stop a service (requires admin rights):</p>
-        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
-          Stop-Service -Name Spooler
-        </code>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="background:#fff; border-left:6px solid #ffb900; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#ffb900; font-size:20px; margin-bottom:8px;">Step 4</h3>
-        <p>➡️ Start a service:</p>
-        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
-          Start-Service -Name Spooler
-        </code>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="background:#fff; border-left:6px solid #605e5c; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#605e5c; font-size:20px; margin-bottom:8px;">Step 5</h3>
-        <p>➡️ Restart a service:</p>
-        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
-          Restart-Service -Name Spooler
-        </code>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="background:#fff; border-left:6px solid #107c10; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <h3 style="color:#107c10; font-size:20px; margin-bottom:8px;">Step 6</h3>
-        <p>➡️ Set a service startup type (Automatic/Manual/Disabled):</p>
-        <code style="background-color:#eef5ff; padding:8px 12px; border-radius:8px; display:block; margin-top:5px; font-size:16px; color:#333;">
-          Set-Service -Name Spooler -StartupType Automatic
-        </code>
-      </div>
-
-    </div>
-  </div>
-</div><br>
-
-<b style="font-size: 17px; color:#cc0000;">Note:</b> 
-<span style="color:#333;">Always ensure you have admin rights when modifying critical services. Stopping essential services may affect system stability ⚠️.</span>`,
-
-  q: "Which sequence of steps allows you to manage services with PowerShell safely?",
-  a: "b",
-  options: [
-    "Reinstall Windows to refresh services",
-    "Use Get-Service to check, Stop-Service to stop, Start-Service to run, and Set-Service to configure",
-    "Delete the service executable from System32",
-    "Change permissions manually from the GUI only"
-  ]
-},
-
-
+ 
 
 {
   "passage": `<div style="margin-top: 120px;">
